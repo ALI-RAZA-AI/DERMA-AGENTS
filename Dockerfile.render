@@ -1,0 +1,28 @@
+# Lite image for Render's FREE web service (512 MB RAM, 0.1 CPU).
+# Uses the MobileNetV2-only checkpoint (artifacts/models_lite): measured peak ~415 MB RSS
+# (diagnosis + agent workflow + scenario run + PDF export) vs ~670 MB for the full ensemble.
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PORT=10000 \
+    OMP_NUM_THREADS=1 MALLOC_ARENA_MAX=2 DERMA_ORT_THREADS=1 \
+    DERMA_ARTIFACTS_DIR=/app/backend/artifacts \
+    DERMA_MODELS_DIR=/app/backend/artifacts/models_lite \
+    DERMA_MODEL_REPORTS_DIR=/app/backend/artifacts/reports/model_lite \
+    DERMA_FRONTEND_DIST=/app/frontend/dist \
+    DERMA_DB_URL=sqlite:////tmp/dermaagents.db DERMA_UPLOAD_DIR=/tmp/uploads
+RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libglib2.0-0 && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY backend/requirements.txt backend/requirements.txt
+RUN pip install --no-cache-dir -r backend/requirements.txt
+# copy only what the lite runtime needs (no ensemble backbones, no cached features)
+COPY backend/dermaagents backend/dermaagents
+COPY backend/artifacts/models_lite backend/artifacts/models_lite
+COPY backend/artifacts/reports backend/artifacts/reports
+COPY backend/artifacts/demo_images backend/artifacts/demo_images
+COPY backend/artifacts/data/split_log.json backend/artifacts/data/split_log.json
+COPY frontend/dist frontend/dist
+RUN useradd -m -u 1000 app && chown -R app /app
+USER app
+WORKDIR /app/backend
+EXPOSE 10000
+CMD ["sh", "-c", "uvicorn dermaagents.api.main:app --host 0.0.0.0 --port ${PORT} --workers 1"]

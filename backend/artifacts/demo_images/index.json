@@ -1,0 +1,80 @@
+[
+ {
+  "file": "acne_1.jpg",
+  "label": "Acne",
+  "split": "test",
+  "source_path": "train/Acne/acne-cystic-114.jpeg"
+ },
+ {
+  "file": "acne_2.jpg",
+  "label": "Acne",
+  "split": "test",
+  "source_path": "train/Acne/acne-pustular-67.jpeg"
+ },
+ {
+  "file": "acne_3.jpg",
+  "label": "Acne",
+  "split": "test",
+  "source_path": "train/Acne/acne-open-comedo-36.jpeg"
+ },
+ {
+  "file": "eczema_1.jpg",
+  "label": "Eczema",
+  "split": "test",
+  "source_path": "test/Eczema/eczema-foot-2.jpeg"
+ },
+ {
+  "file": "eczema_2.jpg",
+  "label": "Eczema",
+  "split": "test",
+  "source_path": "test/Eczema/eczema-asteatotic-1.jpeg"
+ },
+ {
+  "file": "eczema_3.jpg",
+  "label": "Eczema",
+  "split": "test",
+  "source_path": "test/Eczema/eczema-hand-183.jpeg"
+ },
+ {
+  "file": "seborrheic_keratoses_1.jpg",
+  "label": "Seborrheic Keratoses",
+  "split": "test",
+  "source_path": "test/Seborrh_Keratoses/seborrheic-keratoses-ruff-95.jpeg"
+ },
+ {
+  "file": "seborrheic_keratoses_2.jpg",
+  "label": "Seborrheic Keratoses",
+  "split": "test",
+  "source_path": "test/Seborrh_Keratoses/seborrheic-keratosis-irritated-21.jpeg"
+ },
+ {
+  "file": "skin_cancer_1.jpg",
+  "label": "Skin Cancer",
+  "split": "test",
+  "source_path": "train/SkinCancer/basal-cell-carcinoma-nose-56.jpeg"
+ },
+ {
+  "file": "skin_cancer_2.jpg",
+  "label": "Skin Cancer",
+  "split": "test",
+  "source_path": "train/SkinCancer/malignant-melanoma-96.jpeg"
+ },
+ {
+  "file": "skin_cancer_3.jpg",
+  "label": "Skin Cancer",
+  "split": "test",
+  "source_path": "train/SkinCancer/basal-cell-carcinoma-sclerosing-3.jpeg"
+ },
+ {
+  "file": "drug_eruption_1.jpg",
+  "label": "Drug Eruption",
+  "split": "test",
+  "source_path": "train/DrugEruption/drug-eruptions-107.jpeg"
+ },
+ {
+  "file": "infestations_1.jpg",
+  "label": "Infestations/Bites",
+  "split": "test",
+  "source_path": "train/Infestations_Bites/scabies-98.jpeg"
+ }
+]

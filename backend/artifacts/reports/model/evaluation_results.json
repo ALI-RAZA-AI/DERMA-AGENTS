@@ -1,0 +1,265 @@
+{
+  "selected_backbone": "ensemble",
+  "selection_rule": "highest validation macro-F1 (test split untouched)",
+  "classes": [
+    "Acne",
+    "Actinic Keratosis",
+    "Benign Tumors",
+    "Bullous",
+    "Candidiasis",
+    "Drug Eruption",
+    "Eczema",
+    "Infestations/Bites",
+    "Lichen",
+    "Lupus",
+    "Moles",
+    "Seborrheic Keratoses",
+    "Skin Cancer",
+    "Sun/Sunlight Damage"
+  ],
+  "test_metrics": {
+    "accuracy": 0.6149193548387096,
+    "balanced_accuracy": 0.4564575043664335,
+    "macro_precision": 0.3945599684953914,
+    "macro_recall": 0.4564575043664335,
+    "macro_f1": 0.4091885343194158,
+    "weighted_f1": 0.6366294241431415,
+    "per_class": {
+      "Acne": {
+        "precision": 0.9047619047619048,
+        "recall": 0.8172043010752689,
+        "f1": 0.8587570621468926,
+        "support": 93
+      },
+      "Actinic Keratosis": {
+        "precision": 0.1,
+        "recall": 0.16666666666666666,
+        "f1": 0.125,
+        "support": 12
+      },
+      "Benign Tumors": {
+        "precision": 0.2857142857142857,
+        "recall": 0.35294117647058826,
+        "f1": 0.3157894736842105,
+        "support": 17
+      },
+      "Bullous": {
+        "precision": 0.1875,
+        "recall": 0.375,
+        "f1": 0.25,
+        "support": 8
+      },
+      "Candidiasis": {
+        "precision": 0.2857142857142857,
+        "recall": 0.5,
+        "f1": 0.36363636363636365,
+        "support": 4
+      },
+      "Drug Eruption": {
+        "precision": 0.7384615384615385,
+        "recall": 0.5647058823529412,
+        "f1": 0.64,
+        "support": 85
+      },
+      "Eczema": {
+        "precision": 0.2857142857142857,
+        "recall": 0.5,
+        "f1": 0.36363636363636365,
+        "support": 16
+      },
+      "Infestations/Bites": {
+        "precision": 0.7323943661971831,
+        "recall": 0.65,
+        "f1": 0.6887417218543046,
+        "support": 80
+      },
+      "Lichen": {
+        "precision": 0.3333333333333333,
+        "recall": 0.4444444444444444,
+        "f1": 0.38095238095238093,
+        "support": 9
+      },
+      "Lupus": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4
+      },
+      "Moles": {
+        "precision": 0.125,
+        "recall": 0.16666666666666666,
+        "f1": 0.14285714285714285,
+        "support": 6
+      },
+      "Seborrheic Keratoses": {
+        "precision": 0.2,
+        "recall": 0.5714285714285714,
+        "f1": 0.2962962962962963,
+        "support": 7
+      },
+      "Skin Cancer": {
+        "precision": 0.7816091954022989,
+        "recall": 0.6355140186915887,
+        "f1": 0.7010309278350515,
+        "support": 107
+      },
+      "Sun/Sunlight Damage": {
+        "precision": 0.5636363636363636,
+        "recall": 0.6458333333333334,
+        "f1": 0.6019417475728155,
+        "support": 48
+      }
+    },
+    "roc_auc_ovr": {
+      "Acne": 0.9726246698150964,
+      "Actinic Keratosis": 0.8355716253443526,
+      "Benign Tumors": 0.8532481886282697,
+      "Bullous": 0.8775614754098361,
+      "Drug Eruption": 0.9100901674538429,
+      "Eczema": 0.8692708333333333,
+      "Infestations/Bites": 0.9292367788461539,
+      "Lichen": 0.8078941364362309,
+      "Moles": 0.7401360544217688,
+      "Seborrheic Keratoses": 0.9003797838153665,
+      "Skin Cancer": 0.9403935324219783,
+      "Sun/Sunlight Damage": 0.9014136904761905
+    },
+    "roc_auc_ovr_macro_eligible": 0.8781517447002017,
+    "roc_auc_note": "Computed only for classes with >=5 test positives (others statistically unreliable).",
+    "accuracy_95ci_bootstrap": [
+      0.5725806451612904,
+      0.655241935483871
+    ],
+    "macro_f1_95ci_bootstrap": [
+      0.35053362354864415,
+      0.4577363586424658
+    ],
+    "enabled_class_metrics": {
+      "Acne": {
+        "precision": 0.9047619047619048,
+        "recall": 0.8172043010752689,
+        "f1": 0.8587570621468926,
+        "support": 93
+      },
+      "Eczema": {
+        "precision": 0.2857142857142857,
+        "recall": 0.5,
+        "f1": 0.36363636363636365,
+        "support": 16
+      },
+      "Seborrheic Keratosis": {
+        "precision": 0.2,
+        "recall": 0.5714285714285714,
+        "f1": 0.2962962962962963,
+        "support": 7
+      },
+      "Skin Cancer (unspecified)": {
+        "precision": 0.7816091954022989,
+        "recall": 0.6355140186915887,
+        "f1": 0.7010309278350515,
+        "support": 107
+      }
+    }
+  },
+  "calibration": {
+    "temperature": 1.5238245905959564,
+    "val_ece_before": 0.12741927115969975,
+    "val_ece_after": 0.06154158606495655,
+    "test_ece_before": 0.08913338202382284,
+    "test_ece_after": 0.06603331106805031
+  },
+  "conformal": {
+    "alpha": 0.1,
+    "qhat": 0.957615315914154,
+    "prob_threshold": 0.04238468408584595,
+    "target_coverage": 0.9,
+    "test_empirical_coverage": 0.9133064516129032,
+    "test_mean_set_size": 3.9596774193548385,
+    "test_singleton_rate": 0.09475806451612903,
+    "test_singleton_accuracy": 0.9787234042553191
+  },
+  "ood": {
+    "threshold": 453.23504638671875,
+    "percentile_of_validation": 99.0,
+    "test_in_distribution_false_flag_rate": 0.010080645161290322,
+    "probes": {
+      "dermoscopy_HAM10000_unlabelled": {
+        "n": 245,
+        "flagged_ood_rate": 0.0653061224489796,
+        "median_score": 347.04913330078125
+      },
+      "non_skin_natural_images_skimage": {
+        "n": 20,
+        "flagged_ood_rate": 0.95,
+        "median_score": 581.4586181640625
+      }
+    }
+  },
+  "backbone_comparison": [
+    {
+      "backbone": "mobilenetv2",
+      "selected_C": 10.0,
+      "val_macro_f1": 0.350468169368764,
+      "val_accuracy": 0.5231388329979879,
+      "test_accuracy": 0.5766129032258065,
+      "test_macro_f1": 0.3864864803860816,
+      "test_balanced_accuracy": 0.4278915666356986,
+      "test_weighted_f1": 0.6011580780281988,
+      "embedding_dim": 1280,
+      "head_fit_seconds": 2.5
+    },
+    {
+      "backbone": "efficientnet",
+      "selected_C": 3.0,
+      "val_macro_f1": 0.3453208084030816,
+      "val_accuracy": 0.5030181086519114,
+      "test_accuracy": 0.5544354838709677,
+      "test_macro_f1": 0.3556184059063217,
+      "test_balanced_accuracy": 0.41003169155311603,
+      "test_weighted_f1": 0.5901414462003787,
+      "embedding_dim": 1280,
+      "head_fit_seconds": 2.0
+    },
+    {
+      "backbone": "resnet50",
+      "selected_C": 30.0,
+      "val_macro_f1": 0.3850433899388876,
+      "val_accuracy": 0.49295774647887325,
+      "test_accuracy": 0.5403225806451613,
+      "test_macro_f1": 0.33836881275093145,
+      "test_balanced_accuracy": 0.3723043126405421,
+      "test_weighted_f1": 0.5742489308184227,
+      "embedding_dim": 2048,
+      "head_fit_seconds": 3.7
+    },
+    {
+      "backbone": "ensemble",
+      "selected_C": 30.0,
+      "val_macro_f1": 0.4056901987849572,
+      "val_accuracy": 0.5553319919517102,
+      "test_accuracy": 0.6149193548387096,
+      "test_macro_f1": 0.4091885343194158,
+      "test_balanced_accuracy": 0.4564575043664335,
+      "test_weighted_f1": 0.6366294241431415,
+      "embedding_dim": 4608,
+      "head_fit_seconds": 6.9
+    }
+  ],
+  "split_sizes": {
+    "train": 2482,
+    "val": 497,
+    "test": 496
+  },
+  "selective": {
+    "target_accuracy": 0.85,
+    "confidence_level": 0.9,
+    "tau": 0.863710880279541,
+    "val_accept_rate": 0.12072434607645875,
+    "val_accuracy_accepted": 0.9166666666666666,
+    "test_accept_rate": 0.12298387096774194,
+    "test_accuracy_accepted": 0.9344262295081968,
+    "test_accept_rate_enabled_classes": 0.08064516129032258,
+    "test_accuracy_accepted_enabled_classes": 0.95,
+    "method": "smallest calibrated-confidence threshold whose validation accepted-set accuracy has a one-sided 90% Clopper-Pearson lower bound >= target"
+  }
+}

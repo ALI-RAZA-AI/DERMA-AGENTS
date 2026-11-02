@@ -1,0 +1,2 @@
+backbone,selected_C,val_macro_f1,val_accuracy,test_accuracy,test_macro_f1,test_balanced_accuracy,test_weighted_f1,embedding_dim,head_fit_seconds
+mobilenetv2,10.0,0.350468169368764,0.5231388329979879,0.5766129032258065,0.3864864803860816,0.4278915666356986,0.6011580780281988,1280,3.0

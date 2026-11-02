@@ -1,0 +1,27 @@
+# DermaAgents backend - production requirements (Python 3.11-3.13).
+# In the offline build sandbox these were provided by ../vendor (GitHub sources +
+# pure-Python shims); a normal `pip install -r requirements.txt` uses the real packages.
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic>=2.7
+numpy>=1.26
+pandas>=2.2
+scipy>=1.11
+scikit-learn>=1.4
+joblib>=1.3
+opencv-python-headless>=4.9
+onnxruntime>=1.17
+pillow>=10.0
+matplotlib>=3.8
+reportlab>=4.0
+mesa>=3.1,<4
+networkx>=3.2
+rdflib>=7.0
+langchain-core>=0.3
+langchain-text-splitters>=0.3
+langgraph>=0.2
+httpx>=0.27
+# optional
+# psycopg[binary]>=3.1        # PostgreSQL instead of SQLite (DERMA_DB_URL=postgresql://...)
+# chromadb>=0.5               # persistent vector DB (see docs/DEPLOYMENT.md)

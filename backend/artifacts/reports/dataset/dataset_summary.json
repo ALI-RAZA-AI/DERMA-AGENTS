@@ -1,0 +1,198 @@
+{
+  "dataset_root": "/home/claude/raw/SkinDisease/SkinDisease",
+  "total_files": 3795,
+  "total_images_readable": 3795,
+  "corrupted_or_non_image": 0,
+  "file_formats": {
+    ".jpeg": 3550,
+    ".jpg": 245
+  },
+  "splits_found": {
+    "test": [
+      "Acne",
+      "Actinic_Keratosis",
+      "Benign_tumors",
+      "Bullous",
+      "Candidiasis",
+      "DrugEruption",
+      "Eczema",
+      "Infestations_Bites",
+      "Lichen",
+      "Lupus",
+      "Moles",
+      "Seborrh_Keratoses",
+      "SkinCancer",
+      "Sun_Sunlight_Damage"
+    ],
+    "train": [
+      "Acne",
+      "DrugEruption",
+      "HAM10000_images_part_1",
+      "Infestations_Bites",
+      "SkinCancer",
+      "Sun_Sunlight_Damage"
+    ]
+  },
+  "labelled_images": 3550,
+  "unlabelled_images": {
+    "count": 245,
+    "folders": [
+      "HAM10000_images_part_1"
+    ],
+    "reason": "HAM10000 images are labelled only via HAM10000_metadata.csv, which is not included in the upload."
+  },
+  "class_counts_total": {
+    "Skin Cancer": 770,
+    "Acne": 658,
+    "Drug Eruption": 608,
+    "Infestations/Bites": 584,
+    "Sun/Sunlight Damage": 346,
+    "Benign Tumors": 121,
+    "Eczema": 112,
+    "Actinic Keratosis": 83,
+    "Lichen": 61,
+    "Bullous": 55,
+    "Seborrheic Keratoses": 51,
+    "Moles": 40,
+    "Lupus": 34,
+    "Candidiasis": 27
+  },
+  "class_counts_by_split": {
+    "Acne": {
+      "test": 65,
+      "train": 593
+    },
+    "Actinic Keratosis": {
+      "test": 83,
+      "train": 0
+    },
+    "Benign Tumors": {
+      "test": 121,
+      "train": 0
+    },
+    "Bullous": {
+      "test": 55,
+      "train": 0
+    },
+    "Candidiasis": {
+      "test": 27,
+      "train": 0
+    },
+    "Drug Eruption": {
+      "test": 61,
+      "train": 547
+    },
+    "Eczema": {
+      "test": 112,
+      "train": 0
+    },
+    "Infestations/Bites": {
+      "test": 60,
+      "train": 524
+    },
+    "Lichen": {
+      "test": 61,
+      "train": 0
+    },
+    "Lupus": {
+      "test": 34,
+      "train": 0
+    },
+    "Moles": {
+      "test": 40,
+      "train": 0
+    },
+    "Seborrheic Keratoses": {
+      "test": 51,
+      "train": 0
+    },
+    "Skin Cancer": {
+      "test": 77,
+      "train": 693
+    },
+    "Sun/Sunlight Damage": {
+      "test": 34,
+      "train": 312
+    }
+  },
+  "classes_only_in_test": [
+    "Actinic Keratosis",
+    "Benign Tumors",
+    "Bullous",
+    "Candidiasis",
+    "Eczema",
+    "Lichen",
+    "Lupus",
+    "Moles",
+    "Seborrheic Keratoses"
+  ],
+  "readme_classes_missing_from_upload": [
+    "Psoriasis",
+    "Rosacea",
+    "Tinea",
+    "Unknown/Normal",
+    "Vascular Tumors",
+    "Vasculitis",
+    "Vitiligo",
+    "Warts"
+  ],
+  "imbalance_ratio_max_over_min": 28.52,
+  "dimensions": {
+    "width": {
+      "count": 3795.0,
+      "mean": 575.6,
+      "std": 203.4,
+      "min": 100.0,
+      "25%": 469.0,
+      "50%": 720.0,
+      "75%": 720.0,
+      "max": 2560.0
+    },
+    "height": {
+      "count": 3795.0,
+      "mean": 468.9,
+      "std": 183.7,
+      "min": 100.0,
+      "25%": 450.0,
+      "50%": 472.0,
+      "75%": 489.0,
+      "max": 2548.0
+    },
+    "distinct_sizes": 424,
+    "most_common_sizes": {
+      "720x472": 608,
+      "294x222": 467,
+      "720x480": 342,
+      "600x450": 245,
+      "480x720": 145
+    },
+    "smaller_than_64px": 0
+  },
+  "duplicates": {
+    "exact_duplicate_groups": 52,
+    "exact_duplicate_images": 104,
+    "near_duplicate_groups_phash_le4": 134,
+    "images_in_near_duplicate_groups": 278,
+    "groups_with_conflicting_labels": 9,
+    "groups_spanning_train_and_test": 26
+  },
+  "metadata": {
+    "readme_present": true,
+    "patient_or_lesion_ids": "none available (no metadata CSV); near-duplicate pHash clusters are used as grouping keys for leakage-free splits"
+  },
+  "proposal_mapping": {
+    "Acne": "supported",
+    "Eczema": "supported",
+    "Seborrheic Keratosis": "supported_low_sample",
+    "Melanoma": "unsupported",
+    "Basal Cell Carcinoma": "unsupported",
+    "Psoriasis": "unsupported",
+    "Skin Cancer (unspecified)": "supported_proxy"
+  },
+  "external_data_needed_for": [
+    "Psoriasis",
+    "Melanoma",
+    "Basal Cell Carcinoma",
+    "(and more Seborrheic Keratosis / Eczema samples)"
+  ]
+}

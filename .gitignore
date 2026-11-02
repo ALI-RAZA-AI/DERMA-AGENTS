@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+.dataset/
+backend/artifacts/uploads/
+backend/artifacts/dermaagents.db
+backend/artifacts/data/features_*.npz
+frontend/tests/screenshots/
+.env
+
+# >100 MB (GitHub limit). Ships in the project ZIP; copy it here to enable the full ensemble.
+# Without it the app automatically uses the lite MobileNetV2 checkpoint (artifacts/models_lite).
+backend/artifacts/models/resnet50v2_imagenet.onnx
+.venv/

@@ -1,0 +1,136 @@
+{
+  "name": "DermaAgents skin classifier",
+  "version": "1.0.0",
+  "created": "2026-11-01T04:12:37",
+  "backbone": "ensemble",
+  "backbone_components": [
+    "mobilenetv2",
+    "efficientnet",
+    "resnet50"
+  ],
+  "backbone_file": [
+    "mobilenetv2_imagenet.onnx",
+    "efficientnet_edgetpu_m_imagenet.onnx",
+    "resnet50v2_imagenet.onnx"
+  ],
+  "backbone_source": {
+    "mobilenetv2": {
+      "source": "github.com/shicai/MobileNet-Caffe (mobilenet_v2.caffemodel, BSD-3-Clause), converted Caffe->ONNX with dermaagents.ml.tools.caffe2onnx_mobilenetv2",
+      "paper": "Sandler et al., MobileNetV2: Inverted Residuals and Linear Bottlenecks, CVPR 2018"
+    },
+    "efficientnet": {
+      "source": "github.com/google-coral/test_data (efficientnet-edgetpu-M_quant.tflite, Apache-2.0), weights de-quantized to float ONNX with dermaagents.ml.tools.tflite2onnx_efficientnet",
+      "paper": "Tan & Le, EfficientNet (EdgeTPU variant, Google AI blog 2019)"
+    },
+    "resnet50": {
+      "source": "github.com/microsoft/onnxjs-demo (docs/resnet50v2.onnx, MIT; ONNX Model Zoo ResNet50-v2), pooled-feature output exposed with dermaagents.ml.tools.onnx_add_output",
+      "paper": "He et al., Identity Mappings in Deep Residual Networks, ECCV 2016"
+    }
+  },
+  "head": "PCA(256) + multinomial logistic regression (class_weight=balanced)",
+  "C": 30.0,
+  "preprocessing": {
+    "decode": "OpenCV BGR",
+    "per_backbone": {
+      "mobilenetv2": {
+        "resize_shorter_side": 256,
+        "center_crop": 224,
+        "channel_order": "BGR",
+        "mean": [
+          103.94,
+          116.78,
+          123.68
+        ],
+        "std": [
+          58.8235294117647,
+          58.8235294117647,
+          58.8235294117647
+        ]
+      },
+      "efficientnet": {
+        "resize_shorter_side": 274,
+        "center_crop": 240,
+        "channel_order": "RGB",
+        "mean": [
+          127.0,
+          127.0,
+          127.0
+        ],
+        "std": [
+          128.0,
+          128.0,
+          128.0
+        ]
+      },
+      "resnet50": {
+        "resize_shorter_side": 256,
+        "center_crop": 224,
+        "channel_order": "RGB",
+        "mean": [
+          123.675,
+          116.28,
+          103.53
+        ],
+        "std": [
+          58.395,
+          57.12,
+          57.375
+        ]
+      }
+    },
+    "l2_normalize_embedding": true,
+    "tta": "horizontal flip average",
+    "training_augmentation": "random resized crop (0.55-1.0), h/v flip, rotation +/-25deg, HSV jitter +/-15%, light blur; 4 views per training image"
+  },
+  "classes": [
+    "Acne",
+    "Actinic Keratosis",
+    "Benign Tumors",
+    "Bullous",
+    "Candidiasis",
+    "Drug Eruption",
+    "Eczema",
+    "Infestations/Bites",
+    "Lichen",
+    "Lupus",
+    "Moles",
+    "Seborrheic Keratoses",
+    "Skin Cancer",
+    "Sun/Sunlight Damage"
+  ],
+  "enabled_classes": {
+    "Acne": "Acne",
+    "Eczema": "Eczema",
+    "Seborrheic Keratoses": "Seborrheic Keratosis",
+    "Skin Cancer": "Skin Cancer (unspecified)"
+  },
+  "disabled_proposal_classes": [
+    "Psoriasis",
+    "Melanoma",
+    "Basal Cell Carcinoma"
+  ],
+  "temperature": 1.5238245905959564,
+  "conformal_qhat": 0.957615315914154,
+  "conformal_alpha": 0.1,
+  "ood_threshold": 453.23504638671875,
+  "image_quality": {
+    "blur_laplacian_var_p0_5": 18.6405,
+    "mean_intensity_p0_5": 46.84935,
+    "mean_intensity_p99_5": 197.23484999999988,
+    "min_side_px": 64
+  },
+  "training_data": "SKIN_DATASET_FOR_DERMAAGENTS.zip (user upload); 14 labelled classes, grouped re-split",
+  "intended_use": "Academic simulation only - not a medical device and not for clinical diagnosis.",
+  "selective_tau": 0.863710880279541,
+  "selective": {
+    "target_accuracy": 0.85,
+    "confidence_level": 0.9,
+    "tau": 0.863710880279541,
+    "val_accept_rate": 0.12072434607645875,
+    "val_accuracy_accepted": 0.9166666666666666,
+    "test_accept_rate": 0.12298387096774194,
+    "test_accuracy_accepted": 0.9344262295081968,
+    "test_accept_rate_enabled_classes": 0.08064516129032258,
+    "test_accuracy_accepted_enabled_classes": 0.95
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "proposal_classes": {
+    "Acne": {
+      "dataset_labels": [
+        "Acne"
+      ],
+      "status": "supported",
+      "note": "Direct folder label."
+    },
+    "Eczema": {
+      "dataset_labels": [
+        "Eczema"
+      ],
+      "status": "supported",
+      "note": "Present only in the original test/ folder; train+test pooled and re-split."
+    },
+    "Seborrheic Keratosis": {
+      "dataset_labels": [
+        "Seborrheic Keratoses"
+      ],
+      "status": "supported_low_sample",
+      "note": "Present only in test/ (small sample); pooled and re-split."
+    },
+    "Melanoma": {
+      "dataset_labels": [],
+      "status": "unsupported",
+      "note": "Folded into the generic 'Skin Cancer' folder with no sub-type annotation; HAM10000 images that could provide melanoma labels lack their metadata CSV."
+    },
+    "Basal Cell Carcinoma": {
+      "dataset_labels": [],
+      "status": "unsupported",
+      "note": "Same as Melanoma - only an unspecified 'Skin Cancer' label exists."
+    },
+    "Psoriasis": {
+      "dataset_labels": [],
+      "status": "unsupported",
+      "note": "No Psoriasis folder in the upload (listed in the dataset README but missing)."
+    }
+  },
+  "proxy_classes": {
+    "Skin Cancer (unspecified)": {
+      "dataset_labels": [
+        "Skin Cancer"
+      ],
+      "status": "supported_proxy",
+      "note": "Malignant lesions without sub-type; cannot be reported as melanoma or BCC."
+    }
+  },
+  "dataset_classes_present": [
+    "Acne",
+    "Actinic Keratosis",
+    "Benign Tumors",
+    "Bullous",
+    "Candidiasis",
+    "Drug Eruption",
+    "Eczema",
+    "Infestations/Bites",
+    "Lichen",
+    "Lupus",
+    "Moles",
+    "Seborrheic Keratoses",
+    "Skin Cancer",
+    "Sun/Sunlight Damage"
+  ],
+  "dataset_classes_missing_from_upload": [
+    "Psoriasis",
+    "Rosacea",
+    "Tinea",
+    "Unknown/Normal",
+    "Vascular Tumors",
+    "Vasculitis",
+    "Vitiligo",
+    "Warts"
+  ]
+}

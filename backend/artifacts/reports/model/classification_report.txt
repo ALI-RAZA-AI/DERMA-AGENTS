@@ -1,0 +1,20 @@
+                      precision    recall  f1-score   support
+
+                Acne       0.90      0.82      0.86        93
+   Actinic Keratosis       0.10      0.17      0.12        12
+       Benign Tumors       0.29      0.35      0.32        17
+             Bullous       0.19      0.38      0.25         8
+         Candidiasis       0.29      0.50      0.36         4
+       Drug Eruption       0.74      0.56      0.64        85
+              Eczema       0.29      0.50      0.36        16
+  Infestations/Bites       0.73      0.65      0.69        80
+              Lichen       0.33      0.44      0.38         9
+               Lupus       0.00      0.00      0.00         4
+               Moles       0.12      0.17      0.14         6
+Seborrheic Keratoses       0.20      0.57      0.30         7
+         Skin Cancer       0.78      0.64      0.70       107
+ Sun/Sunlight Damage       0.56      0.65      0.60        48
+
+            accuracy                           0.61       496
+           macro avg       0.39      0.46      0.41       496
+        weighted avg       0.67      0.61      0.64       496

@@ -1,0 +1,1045 @@
+PREFIX da: <https://dermaagents.example.org/ontology#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://dermaagents.example.org/ontology>
+    a owl:Ontology ;
+    rdfs:comment "DermaAgents academic ontology - not clinically validated." ;
+.
+
+da:citedBy
+    a owl:ObjectProperty ;
+    rdfs:domain da:Disease ;
+    rdfs:range da:Source ;
+.
+
+da:diagnosedWith
+    a owl:ObjectProperty ;
+    rdfs:domain da:Patient ;
+    rdfs:range da:Disease ;
+.
+
+da:differentialOf
+    a
+        owl:ObjectProperty ,
+        owl:SymmetricProperty ;
+    rdfs:domain da:Disease ;
+    rdfs:range da:Disease ;
+.
+
+da:hasFollowUp
+    a owl:ObjectProperty ;
+    rdfs:domain da:Disease ;
+    rdfs:range da:FollowUp ;
+.
+
+da:hasSeverity
+    a owl:ObjectProperty ;
+    rdfs:domain da:Disease ;
+    rdfs:range da:Severity ;
+.
+
+da:hasSymptom
+    a owl:ObjectProperty ;
+    rdfs:domain da:Patient ;
+    rdfs:range da:Symptom ;
+.
+
+da:indicatesDisease
+    a owl:ObjectProperty ;
+    rdfs:domain da:Symptom ;
+    rdfs:range da:Disease ;
+.
+
+da:requiresReassessment
+    a owl:ObjectProperty ;
+    rdfs:domain da:Disease ;
+    rdfs:range da:ReassessmentTrigger ;
+.
+
+da:responseProbability
+    a owl:DatatypeProperty ;
+.
+
+da:source_christie_melanoma
+    a da:Source ;
+    rdfs:label "Melanoma - The Christie NHS FT" ;
+    da:url "https://christie.nhs.uk/understanding-cancer/types-of-cancer/melanoma"^^xsd:anyURI ;
+.
+
+da:source_gosh_acne
+    a da:Source ;
+    rdfs:label "Acne - Great Ormond Street Hospital" ;
+    da:url "https://gosh.nhs.uk/conditions-and-treatments/general-medical-conditions/acne"^^xsd:anyURI ;
+.
+
+da:source_hwt_eczema
+    a da:Source ;
+    rdfs:label "Eczema - Healthier Together (NHS)" ;
+    da:url "https://healthiertogether.westlondon.nhs.uk/wessex-updated-content-jan-2022/eczema"^^xsd:anyURI ;
+.
+
+da:source_nhs_eczema
+    a da:Source ;
+    rdfs:label "Atopic eczema - NHS" ;
+    da:url "https://www.nhs.uk/conditions/atopic-eczema/"^^xsd:anyURI ;
+.
+
+da:source_nhs_eczema_tx
+    a da:Source ;
+    rdfs:label "Atopic eczema - Treatment - NHS" ;
+    da:url "https://www.nhs.uk/conditions/atopic-eczema/treatment"^^xsd:anyURI ;
+.
+
+da:source_nice_ng198
+    a da:Source ;
+    rdfs:label "Acne vulgaris: management (NG198) - final scope" ;
+    da:url "https://nice.org.uk/guidance/ng198/documents/final-scope"^^xsd:anyURI ;
+.
+
+da:source_pubmed_sk
+    a da:Source ;
+    rdfs:label "Seborrheic keratosis (review), J Dtsch Dermatol Ges 2023;21(3):265-277" ;
+    da:url "https://pubmed.ncbi.nlm.nih.gov/36892019/"^^xsd:anyURI ;
+.
+
+da:source_swbh_bcc
+    a da:Source ;
+    rdfs:label "Basal Cell Carcinoma (BCC) - information for patients" ;
+    da:url "https://www.swbh.nhs.uk/wp-content/uploads/2023/12/Basal-Cell-Carcinoma-BCC-ML6281.pdf"^^xsd:anyURI ;
+.
+
+da:source_tschandl_ham
+    a da:Source ;
+    rdfs:label "Tschandl et al. 2018, The HAM10000 dataset (Scientific Data 5:180161)" ;
+    da:url "https://doi.org/10.1038/sdata.2018.161"^^xsd:anyURI ;
+.
+
+da:source_wales_psoriasis
+    a da:Source ;
+    rdfs:label "Psoriasis - NHS 111 Wales" ;
+    da:url "https://111.wales.nhs.uk/encyclopaedia/p/article/psoriasis/"^^xsd:anyURI ;
+.
+
+da:symptom_asymmetry
+    a da:Symptom ;
+    rdfs:label "Asymmetrical lesion" ;
+    rdfs:comment "Two halves differ in shape." ;
+    da:indicatesDisease da:disease_Melanoma ;
+.
+
+da:symptom_atopic_history
+    a da:Symptom ;
+    rdfs:label "Personal/family history of asthma or hay fever" ;
+    rdfs:comment "Atopic background." ;
+    da:indicatesDisease da:disease_Eczema ;
+.
+
+da:symptom_bleeding_lesion
+    a da:Symptom ;
+    rdfs:label "Bleeding or itchy lesion" ;
+    rdfs:comment "Lesion that bleeds, crusts or itches." ;
+    da:indicatesDisease
+        da:disease_Basal_Cell_Carcinoma ,
+        da:disease_Melanoma ,
+        da:disease_Skin_Cancer__unspecified ;
+.
+
+da:symptom_brown_black_lesion
+    a da:Symptom ;
+    rdfs:label "Brown or black lesion" ;
+    rdfs:comment "Pigmented lesion." ;
+    da:indicatesDisease
+        da:disease_Melanoma ,
+        da:disease_Seborrheic_Keratosis ,
+        da:disease_Skin_Cancer__unspecified ;
+.
+
+da:symptom_comedones
+    a da:Symptom ;
+    rdfs:label "Blackheads or whiteheads" ;
+    rdfs:comment "Open or closed comedones." ;
+    da:indicatesDisease da:disease_Acne ;
+.
+
+da:symptom_cracked_skin
+    a da:Symptom ;
+    rdfs:label "Cracked or sore skin" ;
+    rdfs:comment "Fissured, sore skin." ;
+    da:indicatesDisease da:disease_Eczema ;
+.
+
+da:symptom_dry_skin
+    a da:Symptom ;
+    rdfs:label "Dry skin" ;
+    rdfs:comment "Rough, dry skin." ;
+    da:indicatesDisease
+        da:disease_Eczema ,
+        da:disease_Psoriasis ;
+.
+
+da:symptom_face_chest_back
+    a da:Symptom ;
+    rdfs:label "Lesions on face, chest or back" ;
+    rdfs:comment "Typical acne distribution." ;
+    da:indicatesDisease da:disease_Acne ;
+.
+
+da:symptom_flare_pattern
+    a da:Symptom ;
+    rdfs:label "Flare-ups and remissions" ;
+    rdfs:comment "Symptoms come and go over time." ;
+    da:indicatesDisease
+        da:disease_Eczema ,
+        da:disease_Psoriasis ;
+.
+
+da:symptom_inflamed_spots
+    a da:Symptom ;
+    rdfs:label "Red inflamed spots / pustules" ;
+    rdfs:comment "Papules or pus-filled spots." ;
+    da:indicatesDisease da:disease_Acne ;
+.
+
+da:symptom_irregular_border
+    a da:Symptom ;
+    rdfs:label "Irregular border" ;
+    rdfs:comment "Ragged, notched or blurred edge." ;
+    da:indicatesDisease da:disease_Melanoma ;
+.
+
+da:symptom_itch
+    a da:Symptom ;
+    rdfs:label "Itching" ;
+    rdfs:comment "Pruritus of the affected skin." ;
+    da:indicatesDisease
+        da:disease_Eczema ,
+        da:disease_Psoriasis ,
+        da:disease_Seborrheic_Keratosis ;
+.
+
+da:symptom_joint_pain
+    a da:Symptom ;
+    rdfs:label "Joint pain or stiffness" ;
+    rdfs:comment "Possible psoriatic arthritis." ;
+    da:indicatesDisease da:disease_Psoriasis ;
+.
+
+da:symptom_large_diameter
+    a da:Symptom ;
+    rdfs:label "Lesion wider than about 6 mm" ;
+    rdfs:comment "Larger than typical benign moles." ;
+    da:indicatesDisease da:disease_Melanoma ;
+.
+
+da:symptom_multiple_colours
+    a da:Symptom ;
+    rdfs:label "Several colours in one lesion" ;
+    rdfs:comment "Uneven colour, mixed shades." ;
+    da:indicatesDisease da:disease_Melanoma ;
+.
+
+da:symptom_multiple_lesions
+    a da:Symptom ;
+    rdfs:label "Multiple similar lesions" ;
+    rdfs:comment "Many lesions of the same type." ;
+    da:indicatesDisease da:disease_Seborrheic_Keratosis ;
+.
+
+da:symptom_nail_changes
+    a da:Symptom ;
+    rdfs:label "Nail changes" ;
+    rdfs:comment "Pitting or thickening of nails." ;
+    da:indicatesDisease da:disease_Psoriasis ;
+.
+
+da:symptom_new_or_changing_mole
+    a da:Symptom ;
+    rdfs:label "New or changing mole" ;
+    rdfs:comment "A new mole or a change in an existing one." ;
+    da:indicatesDisease
+        da:disease_Melanoma ,
+        da:disease_Skin_Cancer__unspecified ;
+.
+
+da:symptom_nodules_cysts
+    a da:Symptom ;
+    rdfs:label "Painful deep lumps (nodules/cysts)" ;
+    rdfs:comment "Deep, painful lesions under the skin." ;
+    da:indicatesDisease da:disease_Acne ;
+.
+
+da:symptom_non_healing_sore
+    a da:Symptom ;
+    rdfs:label "Sore that does not heal" ;
+    rdfs:comment "Ulcer or scab persisting for weeks." ;
+    da:indicatesDisease
+        da:disease_Basal_Cell_Carcinoma ,
+        da:disease_Skin_Cancer__unspecified ;
+.
+
+da:symptom_oily_skin
+    a da:Symptom ;
+    rdfs:label "Oily / greasy skin" ;
+    rdfs:comment "Excess sebum on the face or trunk." ;
+    da:indicatesDisease da:disease_Acne ;
+.
+
+da:symptom_older_age
+    a da:Symptom ;
+    rdfs:label "Older adult (typically 50+)" ;
+    rdfs:comment "Age-related onset." ;
+    da:indicatesDisease da:disease_Seborrheic_Keratosis ;
+.
+
+da:symptom_pearly_bump
+    a da:Symptom ;
+    rdfs:label "Shiny / pearly bump" ;
+    rdfs:comment "Small pink, red or pearly bump." ;
+    da:indicatesDisease
+        da:disease_Basal_Cell_Carcinoma ,
+        da:disease_Skin_Cancer__unspecified ;
+.
+
+da:symptom_plaques_extensor
+    a da:Symptom ;
+    rdfs:label "Plaques on elbows, knees, scalp or lower back" ;
+    rdfs:comment "Typical plaque psoriasis sites." ;
+    da:indicatesDisease da:disease_Psoriasis ;
+.
+
+da:symptom_red_patches
+    a da:Symptom ;
+    rdfs:label "Red / inflamed patches" ;
+    rdfs:comment "Areas of inflamed skin." ;
+    da:indicatesDisease
+        da:disease_Eczema ,
+        da:disease_Psoriasis ;
+.
+
+da:symptom_scarring
+    a da:Symptom ;
+    rdfs:label "Scarring" ;
+    rdfs:comment "Marks or pits left after lesions heal." ;
+    da:indicatesDisease da:disease_Acne ;
+.
+
+da:symptom_silvery_scales
+    a da:Symptom ;
+    rdfs:label "Silvery-white scales" ;
+    rdfs:comment "Scaly plaques with silvery-white scale." ;
+    da:indicatesDisease da:disease_Psoriasis ;
+.
+
+da:symptom_skin_creases
+    a da:Symptom ;
+    rdfs:label "Lesions in skin creases" ;
+    rdfs:comment "Elbow folds, behind knees, neck." ;
+    da:indicatesDisease da:disease_Eczema ;
+.
+
+da:symptom_slow_growth
+    a da:Symptom ;
+    rdfs:label "Slowly growing lesion" ;
+    rdfs:comment "Gradual enlargement over months." ;
+    da:indicatesDisease
+        da:disease_Basal_Cell_Carcinoma ,
+        da:disease_Skin_Cancer__unspecified ;
+.
+
+da:symptom_stuck_on
+    a da:Symptom ;
+    rdfs:label "'Stuck-on' waxy lesion" ;
+    rdfs:comment "Looks pasted onto the skin surface." ;
+    da:indicatesDisease da:disease_Seborrheic_Keratosis ;
+.
+
+da:symptom_sun_exposed_site
+    a da:Symptom ;
+    rdfs:label "On a sun-exposed site (face, ears, neck)" ;
+    rdfs:comment "Chronically sun-exposed skin." ;
+    da:indicatesDisease da:disease_Basal_Cell_Carcinoma ;
+.
+
+da:symptom_warty_surface
+    a da:Symptom ;
+    rdfs:label "Rough, warty surface" ;
+    rdfs:comment "Scaly or warty texture." ;
+    da:indicatesDisease da:disease_Seborrheic_Keratosis ;
+.
+
+da:symptom_weeping_crusting
+    a da:Symptom ;
+    rdfs:label "Weeping or crusted skin" ;
+    rdfs:comment "Oozing or crusting (possible infection)." ;
+    da:indicatesDisease da:disease_Eczema ;
+.
+
+da:treatedBy
+    a owl:ObjectProperty ;
+    rdfs:domain da:Disease ;
+    rdfs:range da:Treatment ;
+.
+
+da:url
+    a owl:DatatypeProperty ;
+.
+
+da:weeks
+    a owl:DatatypeProperty ;
+.
+
+da:weight
+    a owl:DatatypeProperty ;
+.
+
+da:followup_Acne
+    a da:FollowUp ;
+    rdfs:label "Simulated review after 12 weeks" ;
+    da:weeks 12 ;
+.
+
+da:followup_Basal_Cell_Carcinoma
+    a da:FollowUp ;
+    rdfs:label "Simulated review after 12 weeks" ;
+    da:weeks 12 ;
+.
+
+da:followup_Eczema
+    a da:FollowUp ;
+    rdfs:label "Simulated review after 4 weeks" ;
+    da:weeks 4 ;
+.
+
+da:followup_Melanoma
+    a da:FollowUp ;
+    rdfs:label "Simulated review after 12 weeks" ;
+    da:weeks 12 ;
+.
+
+da:followup_Psoriasis
+    a da:FollowUp ;
+    rdfs:label "Simulated review after 8 weeks" ;
+    da:weeks 8 ;
+.
+
+da:followup_Seborrheic_Keratosis
+    a da:FollowUp ;
+    rdfs:label "Simulated review after 26 weeks" ;
+    da:weeks 26 ;
+.
+
+da:followup_Skin_Cancer__unspecified
+    a da:FollowUp ;
+    rdfs:label "Simulated review after 12 weeks" ;
+    da:weeks 12 ;
+.
+
+da:reassess_Acne_0
+    a da:ReassessmentTrigger ;
+    rdfs:label "Nodules/cysts or scarring despite treatment -> specialist referral" ;
+.
+
+da:reassess_Basal_Cell_Carcinoma_0
+    a da:ReassessmentTrigger ;
+    rdfs:label "Lesion not healing after ~4 weeks -> clinical assessment / biopsy" ;
+.
+
+da:reassess_Eczema_0
+    a da:ReassessmentTrigger ;
+    rdfs:label "Weeping, crusting or rapidly worsening painful eczema (possible infection) -> urgent review" ;
+.
+
+da:reassess_Melanoma_0
+    a da:ReassessmentTrigger ;
+    rdfs:label "New or changing mole with ABCDE features -> urgent specialist assessment" ;
+.
+
+da:reassess_Psoriasis_0
+    a da:ReassessmentTrigger ;
+    rdfs:label "Widespread pustules or skin-wide redness -> emergency care" ;
+.
+
+da:reassess_Psoriasis_1
+    a da:ReassessmentTrigger ;
+    rdfs:label "Recurring joint pain/swelling -> review for psoriatic arthritis" ;
+.
+
+da:reassess_Seborrheic_Keratosis_0
+    a da:ReassessmentTrigger ;
+    rdfs:label "Doubtful or very dark lesion -> biopsy to exclude melanoma" ;
+.
+
+da:reassess_Skin_Cancer__unspecified_0
+    a da:ReassessmentTrigger ;
+    rdfs:label "Any suspected malignancy -> dermatology referral and biopsy" ;
+.
+
+da:severity_Acne_mild
+    a da:Severity ;
+    rdfs:label "Acne: mild" ;
+    rdfs:comment "A few spots, blackheads/whiteheads" ;
+.
+
+da:severity_Acne_moderate
+    a da:Severity ;
+    rdfs:label "Acne: moderate" ;
+    rdfs:comment "Widespread inflamed spots" ;
+.
+
+da:severity_Acne_severe
+    a da:Severity ;
+    rdfs:label "Acne: severe" ;
+    rdfs:comment "Painful nodules or cysts; scarring risk" ;
+.
+
+da:severity_Basal_Cell_Carcinoma_mild
+    a da:Severity ;
+    rdfs:label "Basal Cell Carcinoma: mild" ;
+    rdfs:comment "Small, slow-growing lesion" ;
+.
+
+da:severity_Basal_Cell_Carcinoma_moderate
+    a da:Severity ;
+    rdfs:label "Basal Cell Carcinoma: moderate" ;
+    rdfs:comment "Larger lesion" ;
+.
+
+da:severity_Basal_Cell_Carcinoma_severe
+    a da:Severity ;
+    rdfs:label "Basal Cell Carcinoma: severe" ;
+    rdfs:comment "Large or long-untreated lesion (more complex treatment)" ;
+.
+
+da:severity_Eczema_mild
+    a da:Severity ;
+    rdfs:label "Eczema: mild" ;
+    rdfs:comment "Small areas of dry, itchy skin" ;
+.
+
+da:severity_Eczema_moderate
+    a da:Severity ;
+    rdfs:label "Eczema: moderate" ;
+    rdfs:comment "Red, itchy, widespread patches" ;
+.
+
+da:severity_Eczema_severe
+    a da:Severity ;
+    rdfs:label "Eczema: severe" ;
+    rdfs:comment "Extensive, cracked or weeping skin; possible infection" ;
+.
+
+da:severity_Melanoma_mild
+    a da:Severity ;
+    rdfs:label "Melanoma: mild" ;
+    rdfs:comment "-" ;
+.
+
+da:severity_Melanoma_moderate
+    a da:Severity ;
+    rdfs:label "Melanoma: moderate" ;
+    rdfs:comment "-" ;
+.
+
+da:severity_Melanoma_severe
+    a da:Severity ;
+    rdfs:label "Melanoma: severe" ;
+    rdfs:comment "Any suspicion warrants urgent specialist assessment" ;
+.
+
+da:severity_Psoriasis_mild
+    a da:Severity ;
+    rdfs:label "Psoriasis: mild" ;
+    rdfs:comment "Few small plaques" ;
+.
+
+da:severity_Psoriasis_moderate
+    a da:Severity ;
+    rdfs:label "Psoriasis: moderate" ;
+    rdfs:comment "Larger areas affected" ;
+.
+
+da:severity_Psoriasis_severe
+    a da:Severity ;
+    rdfs:label "Psoriasis: severe" ;
+    rdfs:comment "Widespread / pustular / erythrodermic forms needing urgent care" ;
+.
+
+da:severity_Seborrheic_Keratosis_mild
+    a da:Severity ;
+    rdfs:label "Seborrheic Keratosis: mild" ;
+    rdfs:comment "Asymptomatic" ;
+.
+
+da:severity_Seborrheic_Keratosis_moderate
+    a da:Severity ;
+    rdfs:label "Seborrheic Keratosis: moderate" ;
+    rdfs:comment "Irritated / itchy lesion" ;
+.
+
+da:severity_Seborrheic_Keratosis_severe
+    a da:Severity ;
+    rdfs:label "Seborrheic Keratosis: severe" ;
+    rdfs:comment "Atypical appearance needing exclusion of cancer" ;
+.
+
+da:severity_Skin_Cancer__unspecified_mild
+    a da:Severity ;
+    rdfs:label "Skin Cancer (unspecified): mild" ;
+    rdfs:comment "-" ;
+.
+
+da:severity_Skin_Cancer__unspecified_moderate
+    a da:Severity ;
+    rdfs:label "Skin Cancer (unspecified): moderate" ;
+    rdfs:comment "-" ;
+.
+
+da:severity_Skin_Cancer__unspecified_severe
+    a da:Severity ;
+    rdfs:label "Skin Cancer (unspecified): severe" ;
+    rdfs:comment "Specialist assessment and biopsy" ;
+.
+
+da:source_bad_bcc
+    a da:Source ;
+    rdfs:label "Basal cell carcinoma - patient information leaflet (2025)" ;
+    da:url "https://www.skinhealthinfo.org.uk/wp-content/uploads/2018/10/Basal-cell-carcinoma-PIL-July-2025.pdf"^^xsd:anyURI ;
+.
+
+da:source_bad_sk
+    a da:Source ;
+    rdfs:label "Seborrhoeic keratosis - skinhealthinfo" ;
+    da:url "https://www.skinhealthinfo.org.uk/condition/seborrhoeic-keratosis/"^^xsd:anyURI ;
+.
+
+da:source_dermnet_sk
+    a da:Source ;
+    rdfs:label "Seborrhoeic keratosis - DermNet" ;
+    da:url "https://dermnetnz.org/topics/seborrhoeic-keratosis"^^xsd:anyURI ;
+.
+
+da:source_dermnet_sk2
+    a da:Source ;
+    rdfs:label "Seborrhoeic keratosis (lesions) - DermNet" ;
+    da:url "https://dermnetnz.org/lesions/seborrhoeic-keratosis.html"^^xsd:anyURI ;
+.
+
+da:source_hse_melanoma
+    a da:Source ;
+    rdfs:label "Skin cancer (melanoma) symptoms - HSE" ;
+    da:url "https://www2.hse.ie/conditions/skin-cancer-melanoma/symptoms/"^^xsd:anyURI ;
+.
+
+da:source_nhs_acne
+    a da:Source ;
+    rdfs:label "Acne - NHS" ;
+    da:url "https://www.nhs.uk/conditions/acne/"^^xsd:anyURI ;
+.
+
+da:source_nhs_eczema_children
+    a da:Source ;
+    rdfs:label "Eczema in children - NHS" ;
+    da:url "https://www.nhs.uk/conditions/pregnancy-and-baby/eczema-in-children/"^^xsd:anyURI ;
+.
+
+da:source_nhs_psoriasis
+    a da:Source ;
+    rdfs:label "Psoriasis - NHS" ;
+    da:url "https://www.nhs.uk/conditions/psoriasis/"^^xsd:anyURI ;
+.
+
+da:source_nhs_psoriasis_sym
+    a da:Source ;
+    rdfs:label "Symptoms of psoriasis - NHS" ;
+    da:url "https://www.nhs.uk/conditions/psoriasis/causes"^^xsd:anyURI ;
+.
+
+da:source_nhs_psoriasis_types
+    a da:Source ;
+    rdfs:label "Psoriasis symptoms (NHS content, pharmacy syndication)" ;
+    da:url "https://websites.bewell.uk/hayling-pharmacy/nhs_conditions_psoriasis_symptoms"^^xsd:anyURI ;
+.
+
+da:source_nwcr_skin
+    a da:Source ;
+    rdfs:label "Spot the signs of skin cancer" ;
+    da:url "https://nwcr.org/thinkagain/spotthesigns"^^xsd:anyURI ;
+.
+
+da:source_pulse_abcde
+    a da:Source ;
+    rdfs:label "Toolbox - the ABCDE criteria for pigmented skin lesions" ;
+    da:url "https://www.pulsetoday.co.uk/clinical-feature/clinical-areas/cancer/toolbox-the-abcde-criteria-for-pigmented-skin-lesions/"^^xsd:anyURI ;
+.
+
+da:source_selfcare_acne
+    a da:Source ;
+    rdfs:label "Acne (spots) factsheet" ;
+    da:url "https://selfcareforum.org/wp-content/uploads/2024/10/8-Acne-202410-V5.pdf"^^xsd:anyURI ;
+.
+
+da:source_uhl_bcc
+    a da:Source ;
+    rdfs:label "Basal cell carcinoma (BCC) - patient leaflet" ;
+    da:url "https://www.uhleicester.nhs.uk/wp-content/uploads/2025/06/886_122023-Basal-cell-carcinoma-BCC.pdf"^^xsd:anyURI ;
+.
+
+da:source_wales_eczema
+    a da:Source ;
+    rdfs:label "Eczema (atopic) - NHS 111 Wales" ;
+    da:url "https://111.wales.nhs.uk/eczema(atopic)"^^xsd:anyURI ;
+.
+
+da:treatment_Acne_0
+    a da:Treatment ;
+    rdfs:label "Skin-care advice and self-care" ;
+    da:responseProbability 3e-01 ;
+    da:weeks 6 ;
+.
+
+da:treatment_Acne_1
+    a da:Treatment ;
+    rdfs:label "Clinician-led topical treatment (topical class)" ;
+    da:responseProbability 5e-01 ;
+    da:weeks 12 ;
+.
+
+da:treatment_Acne_2
+    a da:Treatment ;
+    rdfs:label "Combined topical + oral therapy class" ;
+    da:responseProbability 5.5e-01 ;
+    da:weeks 12 ;
+.
+
+da:treatment_Acne_3
+    a da:Treatment ;
+    rdfs:label "Specialist dermatology referral" ;
+    da:responseProbability 7e-01 ;
+    da:weeks 16 ;
+.
+
+da:treatment_Basal_Cell_Carcinoma_0
+    a da:Treatment ;
+    rdfs:label "Dermatology assessment and biopsy" ;
+    da:responseProbability 0e+00 ;
+    da:weeks 4 ;
+.
+
+da:treatment_Basal_Cell_Carcinoma_1
+    a da:Treatment ;
+    rdfs:label "Surgical removal" ;
+    da:responseProbability 9e-01 ;
+    da:weeks 4 ;
+.
+
+da:treatment_Basal_Cell_Carcinoma_2
+    a da:Treatment ;
+    rdfs:label "Non-surgical options (e.g. photodynamic therapy, radiotherapy)" ;
+    da:responseProbability 7.5e-01 ;
+    da:weeks 8 ;
+.
+
+da:treatment_Eczema_0
+    a da:Treatment ;
+    rdfs:label "Daily emollients and trigger avoidance" ;
+    da:responseProbability 3.5e-01 ;
+    da:weeks 4 ;
+.
+
+da:treatment_Eczema_1
+    a da:Treatment ;
+    rdfs:label "Stepped topical anti-inflammatory treatment (topical class)" ;
+    da:responseProbability 5.5e-01 ;
+    da:weeks 4 ;
+.
+
+da:treatment_Eczema_2
+    a da:Treatment ;
+    rdfs:label "Specialist referral (e.g. phototherapy / systemic class)" ;
+    da:responseProbability 6.5e-01 ;
+    da:weeks 12 ;
+.
+
+da:treatment_Melanoma_0
+    a da:Treatment ;
+    rdfs:label "Urgent specialist assessment and biopsy" ;
+    da:responseProbability 0e+00 ;
+    da:weeks 2 ;
+.
+
+da:treatment_Melanoma_1
+    a da:Treatment ;
+    rdfs:label "Surgical excision" ;
+    da:responseProbability 8e-01 ;
+    da:weeks 4 ;
+.
+
+da:treatment_Melanoma_2
+    a da:Treatment ;
+    rdfs:label "Further oncology treatment if spread (class level)" ;
+    da:responseProbability 5e-01 ;
+    da:weeks 24 ;
+.
+
+da:treatment_Psoriasis_0
+    a da:Treatment ;
+    rdfs:label "Topical treatment (topical class)" ;
+    da:responseProbability 4.5e-01 ;
+    da:weeks 8 ;
+.
+
+da:treatment_Psoriasis_1
+    a da:Treatment ;
+    rdfs:label "Phototherapy" ;
+    da:responseProbability 5.5e-01 ;
+    da:weeks 10 ;
+.
+
+da:treatment_Psoriasis_2
+    a da:Treatment ;
+    rdfs:label "Systemic / biological therapy class (specialist)" ;
+    da:responseProbability 6.5e-01 ;
+    da:weeks 16 ;
+.
+
+da:treatment_Seborrheic_Keratosis_0
+    a da:Treatment ;
+    rdfs:label "Reassurance and monitoring (benign)" ;
+    da:responseProbability 7e-01 ;
+    da:weeks 12 ;
+.
+
+da:treatment_Seborrheic_Keratosis_1
+    a da:Treatment ;
+    rdfs:label "Optional removal if irritated or unsightly" ;
+    da:responseProbability 9e-01 ;
+    da:weeks 4 ;
+.
+
+da:treatment_Skin_Cancer__unspecified_0
+    a da:Treatment ;
+    rdfs:label "Dermatology referral and biopsy to establish sub-type" ;
+    da:responseProbability 0e+00 ;
+    da:weeks 2 ;
+.
+
+da:treatment_Skin_Cancer__unspecified_1
+    a da:Treatment ;
+    rdfs:label "Surgical treatment per confirmed sub-type" ;
+    da:responseProbability 8e-01 ;
+    da:weeks 4 ;
+.
+
+da:Patient
+    a owl:Class ;
+    rdfs:label "Patient" ;
+.
+
+da:source_bidmc_bcc
+    a da:Source ;
+    rdfs:label "Basal Cell Carcinoma - BIDMC" ;
+    da:url "https://bidmc.org/conditions-and-treatments/cancers-tumors-and-blood/basal-cell-carcinoma"^^xsd:anyURI ;
+.
+
+da:source_cruk_melanoma
+    a da:Source ;
+    rdfs:label "Symptoms of melanoma skin cancer - Cancer Research UK" ;
+    da:url "https://about-cancer.cancerresearchuk.org/about-cancer/melanoma/symptoms"^^xsd:anyURI ;
+.
+
+da:source_spire_melanoma
+    a da:Source ;
+    rdfs:label "Skin cancer: the ABCDEs of melanoma" ;
+    da:url "https://spirehealthcare.com/health-hub/specialties/cancer/skin-cancer-the-abcdes-of-melanoma/"^^xsd:anyURI ;
+.
+
+da:disease_Acne
+    a da:Disease ;
+    rdfs:label "Acne" ;
+    rdfs:comment "Common condition causing spots, oily skin and sometimes painful lumps, mainly on face, chest and back." ;
+    da:citedBy
+        da:source_nhs_acne ,
+        da:source_selfcare_acne ;
+    da:differentialOf da:disease_Rosacea ;
+    da:hasFollowUp da:followup_Acne ;
+    da:hasSeverity
+        da:severity_Acne_mild ,
+        da:severity_Acne_moderate ,
+        da:severity_Acne_severe ;
+    da:requiresReassessment da:reassess_Acne_0 ;
+    da:treatedBy
+        da:treatment_Acne_0 ,
+        da:treatment_Acne_1 ,
+        da:treatment_Acne_2 ,
+        da:treatment_Acne_3 ;
+.
+
+da:disease_Skin_Cancer__unspecified
+    a da:Disease ;
+    rdfs:label "Skin Cancer (unspecified)" ;
+    rdfs:comment "Dataset umbrella label for malignant skin lesions without sub-type (melanoma, BCC, SCC, ...)." ;
+    da:citedBy
+        da:source_bidmc_bcc ,
+        da:source_cruk_melanoma ,
+        da:source_nwcr_skin ,
+        da:source_spire_melanoma ;
+    da:differentialOf da:disease_Seborrheic_Keratosis ;
+    da:hasFollowUp da:followup_Skin_Cancer__unspecified ;
+    da:hasSeverity
+        da:severity_Skin_Cancer__unspecified_mild ,
+        da:severity_Skin_Cancer__unspecified_moderate ,
+        da:severity_Skin_Cancer__unspecified_severe ;
+    da:requiresReassessment da:reassess_Skin_Cancer__unspecified_0 ;
+    da:treatedBy
+        da:treatment_Skin_Cancer__unspecified_0 ,
+        da:treatment_Skin_Cancer__unspecified_1 ;
+.
+
+da:disease_Basal_Cell_Carcinoma
+    a da:Disease ;
+    rdfs:label "Basal Cell Carcinoma" ;
+    rdfs:comment "Most common, slow-growing skin cancer; usually a pearly bump or non-healing sore on sun-exposed skin." ;
+    da:citedBy
+        da:source_bad_bcc ,
+        da:source_bidmc_bcc ,
+        da:source_uhl_bcc ;
+    da:differentialOf
+        da:disease_Melanoma ,
+        da:disease_Seborrheic_Keratosis ;
+    da:hasFollowUp da:followup_Basal_Cell_Carcinoma ;
+    da:hasSeverity
+        da:severity_Basal_Cell_Carcinoma_mild ,
+        da:severity_Basal_Cell_Carcinoma_moderate ,
+        da:severity_Basal_Cell_Carcinoma_severe ;
+    da:requiresReassessment da:reassess_Basal_Cell_Carcinoma_0 ;
+    da:treatedBy
+        da:treatment_Basal_Cell_Carcinoma_0 ,
+        da:treatment_Basal_Cell_Carcinoma_1 ,
+        da:treatment_Basal_Cell_Carcinoma_2 ;
+.
+
+da:FollowUp
+    a owl:Class ;
+    rdfs:label "FollowUp" ;
+.
+
+da:ReassessmentTrigger
+    a owl:Class ;
+    rdfs:label "ReassessmentTrigger" ;
+.
+
+da:disease_Eczema
+    a da:Disease ;
+    rdfs:label "Eczema" ;
+    rdfs:comment "Atopic eczema makes skin itchy, dry, red and cracked; usually long-term with flare-ups." ;
+    da:citedBy
+        da:source_nhs_eczema_children ,
+        da:source_wales_eczema ;
+    da:differentialOf da:disease_Psoriasis ;
+    da:hasFollowUp da:followup_Eczema ;
+    da:hasSeverity
+        da:severity_Eczema_mild ,
+        da:severity_Eczema_moderate ,
+        da:severity_Eczema_severe ;
+    da:requiresReassessment da:reassess_Eczema_0 ;
+    da:treatedBy
+        da:treatment_Eczema_0 ,
+        da:treatment_Eczema_1 ,
+        da:treatment_Eczema_2 ;
+.
+
+da:disease_Melanoma
+    a da:Disease ;
+    rdfs:label "Melanoma" ;
+    rdfs:comment "Skin cancer of pigment cells; often first noticed as a new mole or a change in an existing mole (ABCDE)." ;
+    da:citedBy
+        da:source_cruk_melanoma ,
+        da:source_hse_melanoma ,
+        da:source_pulse_abcde ,
+        da:source_spire_melanoma ;
+    da:differentialOf
+        da:disease_Basal_Cell_Carcinoma ,
+        da:disease_Seborrheic_Keratosis ;
+    da:hasFollowUp da:followup_Melanoma ;
+    da:hasSeverity
+        da:severity_Melanoma_mild ,
+        da:severity_Melanoma_moderate ,
+        da:severity_Melanoma_severe ;
+    da:requiresReassessment da:reassess_Melanoma_0 ;
+    da:treatedBy
+        da:treatment_Melanoma_0 ,
+        da:treatment_Melanoma_1 ,
+        da:treatment_Melanoma_2 ;
+.
+
+da:disease_Psoriasis
+    a da:Disease ;
+    rdfs:label "Psoriasis" ;
+    rdfs:comment "Long-term condition with dry, itchy, flaky patches forming silvery-white scales; flares and remissions." ;
+    da:citedBy
+        da:source_nhs_psoriasis ,
+        da:source_nhs_psoriasis_sym ,
+        da:source_nhs_psoriasis_types ;
+    da:differentialOf da:disease_Eczema ;
+    da:hasFollowUp da:followup_Psoriasis ;
+    da:hasSeverity
+        da:severity_Psoriasis_mild ,
+        da:severity_Psoriasis_moderate ,
+        da:severity_Psoriasis_severe ;
+    da:requiresReassessment
+        da:reassess_Psoriasis_0 ,
+        da:reassess_Psoriasis_1 ;
+    da:treatedBy
+        da:treatment_Psoriasis_0 ,
+        da:treatment_Psoriasis_1 ,
+        da:treatment_Psoriasis_2 ;
+.
+
+da:disease_Seborrheic_Keratosis
+    a da:Disease ;
+    rdfs:label "Seborrheic Keratosis" ;
+    rdfs:comment "Very common harmless 'stuck-on' warty growth of adult skin; dark ones can resemble melanoma." ;
+    da:citedBy
+        da:source_bad_sk ,
+        da:source_dermnet_sk ,
+        da:source_dermnet_sk2 ;
+    da:differentialOf
+        da:disease_Basal_Cell_Carcinoma ,
+        da:disease_Melanoma ;
+    da:hasFollowUp da:followup_Seborrheic_Keratosis ;
+    da:hasSeverity
+        da:severity_Seborrheic_Keratosis_mild ,
+        da:severity_Seborrheic_Keratosis_moderate ,
+        da:severity_Seborrheic_Keratosis_severe ;
+    da:requiresReassessment da:reassess_Seborrheic_Keratosis_0 ;
+    da:treatedBy
+        da:treatment_Seborrheic_Keratosis_0 ,
+        da:treatment_Seborrheic_Keratosis_1 ;
+.
+
+da:Disease
+    a owl:Class ;
+    rdfs:label "Disease" ;
+.
+
+da:Treatment
+    a owl:Class ;
+    rdfs:label "Treatment" ;
+.
+
+da:Severity
+    a owl:Class ;
+    rdfs:label "Severity" ;
+.
+
+da:Source
+    a owl:Class ;
+    rdfs:label "Source" ;
+.
+
+da:Symptom
+    a owl:Class ;
+    rdfs:label "Symptom" ;
+.

@@ -1,0 +1,16 @@
+# Render Blueprint - free web service running the lite (MobileNetV2) DermaAgents image.
+# Render dashboard -> New -> Blueprint -> pick this GitHub repo -> Apply.
+services:
+  - type: web
+    name: dermaagents
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.render
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: DERMA_CORS_ORIGINS
+        value: "*"
+      - key: ANTHROPIC_API_KEY      # optional: enables LLM-grounded answers
+        sync: false

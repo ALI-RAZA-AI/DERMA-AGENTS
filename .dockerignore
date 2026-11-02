@@ -1,0 +1,10 @@
+**/__pycache__
+**/.pytest_cache
+**/node_modules
+backend/.venv
+backend/artifacts/data/features_*
+backend/artifacts/uploads
+backend/artifacts/dermaagents.db
+frontend/tests/screenshots
+vendor
+.git

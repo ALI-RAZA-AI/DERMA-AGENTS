@@ -1,0 +1,29 @@
+{
+  "index_to_label": [
+    "Acne",
+    "Actinic Keratosis",
+    "Benign Tumors",
+    "Bullous",
+    "Candidiasis",
+    "Drug Eruption",
+    "Eczema",
+    "Infestations/Bites",
+    "Lichen",
+    "Lupus",
+    "Moles",
+    "Seborrheic Keratoses",
+    "Skin Cancer",
+    "Sun/Sunlight Damage"
+  ],
+  "enabled": {
+    "Acne": "Acne",
+    "Eczema": "Eczema",
+    "Seborrheic Keratoses": "Seborrheic Keratosis",
+    "Skin Cancer": "Skin Cancer (unspecified)"
+  },
+  "disabled_proposal_classes": [
+    "Psoriasis",
+    "Melanoma",
+    "Basal Cell Carcinoma"
+  ]
+}

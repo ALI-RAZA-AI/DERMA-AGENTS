@@ -1,0 +1,23 @@
+{
+  "decode": "OpenCV BGR",
+  "per_backbone": {
+    "mobilenetv2": {
+      "resize_shorter_side": 256,
+      "center_crop": 224,
+      "channel_order": "BGR",
+      "mean": [
+        103.94,
+        116.78,
+        123.68
+      ],
+      "std": [
+        58.8235294117647,
+        58.8235294117647,
+        58.8235294117647
+      ]
+    }
+  },
+  "l2_normalize_embedding": true,
+  "tta": "horizontal flip average",
+  "training_augmentation": "random resized crop (0.55-1.0), h/v flip, rotation +/-25deg, HSV jitter +/-15%, light blur; 4 views per training image"
+}

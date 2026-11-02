@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8
+playwright>=1.45
+# Optional GPU fine-tuning path (not run in the sandbox): torch, torchvision, timm

@@ -1,0 +1,281 @@
+kind,group,path,labels,splits
+exact,0b09e87ba026,train/Acne/acne-cystic-18.jpeg,Acne,train
+exact,0b09e87ba026,train/Acne/acne-pustular-6.jpeg,Acne,train
+exact,0bc3c725fc9b,train/SkinCancer/malignant-melanoma-11.jpeg,Skin Cancer,train
+exact,0bc3c725fc9b,train/SkinCancer/malignant-melanoma-95.jpeg,Skin Cancer,train
+exact,0d855e6c63ca,train/SkinCancer/ctcl-54.jpeg,Skin Cancer,train
+exact,0d855e6c63ca,train/SkinCancer/ctcl-55.jpeg,Skin Cancer,train
+exact,0eb92c83a70e,test/Acne/acne-cystic-11.jpeg,Acne,test|train
+exact,0eb92c83a70e,train/Acne/acne-pustular-18.jpeg,Acne,test|train
+exact,138232a3e040,train/Infestations_Bites/biting-insects-37.jpeg,Infestations/Bites,train
+exact,138232a3e040,train/Infestations_Bites/flea-bites-3.jpeg,Infestations/Bites,train
+exact,14ab922a09e6,train/Infestations_Bites/cutaneous-Larva-Migrans-11.jpeg,Infestations/Bites,train
+exact,14ab922a09e6,train/Infestations_Bites/cutaneous-Larva-Migrans-20.jpeg,Infestations/Bites,train
+exact,154f045244e2,train/SkinCancer/basal-cell-carcinoma-pigmented-30.jpeg,Skin Cancer,train
+exact,154f045244e2,train/SkinCancer/basal-cell-carcinoma-pigmented-31.jpeg,Skin Cancer,train
+exact,1c64a9dc9df9,train/Infestations_Bites/tick-bite-12.jpeg,Infestations/Bites,train
+exact,1c64a9dc9df9,train/Infestations_Bites/tick-bite-13.jpeg,Infestations/Bites,train
+exact,1c94bb55b0bc,train/SkinCancer/basal-cell-carcinoma-lip-27.jpeg,Skin Cancer,train
+exact,1c94bb55b0bc,train/SkinCancer/basal-cell-carcinoma-lip-28.jpeg,Skin Cancer,train
+exact,310b62b98658,train/Infestations_Bites/cutaneous-Larva-Migrans-30.jpeg,Infestations/Bites,train
+exact,310b62b98658,train/Infestations_Bites/cutaneous-Larva-Migrans-7.jpeg,Infestations/Bites,train
+exact,315dab819616,train/Acne/07Acne081101.jpeg,Acne,train
+exact,315dab819616,train/Acne/acne-cystic-12.jpeg,Acne,train
+exact,334c3487e1a4,test/Eczema/eczema-hand-16.jpeg,Acne|Eczema,test|train
+exact,334c3487e1a4,train/Acne/acne-cystic-2.jpeg,Acne|Eczema,test|train
+exact,3a08234963ce,train/DrugEruption/drug-eruptions-50.jpeg,Drug Eruption,train
+exact,3a08234963ce,train/DrugEruption/drug-eruptions-51.jpeg,Drug Eruption,train
+exact,4c551ab73d1a,test/Acne/acne-excoriated-2.jpeg,Acne,test|train
+exact,4c551ab73d1a,train/Acne/acne-excoriated-1.jpeg,Acne,test|train
+exact,4fff8cffc081,train/DrugEruption/drug-eruptions-48.jpeg,Drug Eruption,train
+exact,4fff8cffc081,train/DrugEruption/drug-eruptions-49.jpeg,Drug Eruption,train
+exact,57caf876f7a9,train/SkinCancer/basal-cell-carcinoma-superficial-12.jpeg,Skin Cancer,train
+exact,57caf876f7a9,train/SkinCancer/basal-cell-carcinoma-superficial-13.jpeg,Skin Cancer,train
+exact,58b48609cfd3,train/Acne/acne-cystic-13.jpeg,Acne,train
+exact,58b48609cfd3,train/Acne/acne-pustular-3.jpeg,Acne,train
+exact,610b03d8b16e,train/SkinCancer/basal-cell-carcinoma-lesion-56.jpeg,Skin Cancer,train
+exact,610b03d8b16e,train/SkinCancer/basal-cell-carcinoma-superficial-28.jpeg,Skin Cancer,train
+exact,65ac96ec37ae,train/Acne/acne-closed-comedo-003.jpeg,Acne,train
+exact,65ac96ec37ae,train/Acne/acne-open-comedo-14.jpeg,Acne,train
+exact,6a2aeb94d99c,train/SkinCancer/basal-cell-carcinoma-lid-16.jpeg,Skin Cancer,train
+exact,6a2aeb94d99c,train/SkinCancer/basal-cell-carcinoma-lid-17.jpeg,Skin Cancer,train
+exact,6deef2b03f81,train/DrugEruption/images25.jpeg,Drug Eruption,train
+exact,6deef2b03f81,train/DrugEruption/images383.jpeg,Drug Eruption,train
+exact,6e21ac50dbe7,train/SkinCancer/ctcl-48.jpeg,Skin Cancer,train
+exact,6e21ac50dbe7,train/SkinCancer/ctcl-49.jpeg,Skin Cancer,train
+exact,72336f300ece,test/Infestations_Bites/scabies-112.jpeg,Infestations/Bites,test|train
+exact,72336f300ece,train/Infestations_Bites/scabies-113.jpeg,Infestations/Bites,test|train
+exact,76ff7617fec1,train/SkinCancer/basal-cell-carcinoma-scalp-8.jpeg,Skin Cancer,train
+exact,76ff7617fec1,train/SkinCancer/basal-cell-nevus-syndrome-18.jpeg,Skin Cancer,train
+exact,82296278c5ad,train/Acne/acne-cystic-20.jpeg,Acne,train
+exact,82296278c5ad,train/Acne/acne-pustular-7.jpeg,Acne,train
+exact,9d0a09f1ea05,train/SkinCancer/basal-cell-carcinoma-lid-29.jpeg,Skin Cancer,train
+exact,9d0a09f1ea05,train/SkinCancer/basal-cell-carcinoma-lid-30.jpeg,Skin Cancer,train
+exact,a4b47e981f24,train/Infestations_Bites/cutaneous-Larva-Migrans-14.jpeg,Infestations/Bites,train
+exact,a4b47e981f24,train/Infestations_Bites/cutaneous-Larva-Migrans-23.jpeg,Infestations/Bites,train
+exact,a4e8bd29e4ca,test/DrugEruption/drug-eruption-photosensitivity-1.jpeg,Drug Eruption,test|train
+exact,a4e8bd29e4ca,train/DrugEruption/drug-eruption-photosensitivity-6.jpeg,Drug Eruption,test|train
+exact,aa26f7432281,train/SkinCancer/basal-cell-carcinoma-lesion-79.jpeg,Skin Cancer,train
+exact,aa26f7432281,train/SkinCancer/basal-cell-carcinoma-lesion-80.jpeg,Skin Cancer,train
+exact,ad7364e3d7ee,test/Infestations_Bites/cutaneous-Larva-Migrans-5.jpeg,Infestations/Bites,test|train
+exact,ad7364e3d7ee,train/Infestations_Bites/cutaneous-Larva-Migrans-27.jpeg,Infestations/Bites,test|train
+exact,aded86132941,train/Sun_Sunlight_Damage/lentigo-adults-28.jpeg,Sun/Sunlight Damage,train
+exact,aded86132941,train/Sun_Sunlight_Damage/lentigo-adults-32.jpeg,Sun/Sunlight Damage,train
+exact,b6338cc58759,train/SkinCancer/basal-cell-carcinoma-lesion-60.jpeg,Skin Cancer,train
+exact,b6338cc58759,train/SkinCancer/basal-cell-carcinoma-lesion-86.jpeg,Skin Cancer,train
+exact,b81e5d102fcf,test/DrugEruption/drug-eruptions-53.jpeg,Drug Eruption,test|train
+exact,b81e5d102fcf,train/DrugEruption/drug-eruptions-54.jpeg,Drug Eruption,test|train
+exact,c230cdb20ada,train/SkinCancer/basal-cell-carcinoma-lesion-71.jpeg,Skin Cancer,train
+exact,c230cdb20ada,train/SkinCancer/basal-cell-carcinoma-lesion-72.jpeg,Skin Cancer,train
+exact,ca7624023ac4,train/Infestations_Bites/biting-insects-35.jpeg,Infestations/Bites,train
+exact,ca7624023ac4,train/Infestations_Bites/flea-bites-1.jpeg,Infestations/Bites,train
+exact,cda4b23d8a44,train/Infestations_Bites/cutaneous-Larva-Migrans-10.jpeg,Infestations/Bites,train
+exact,cda4b23d8a44,train/Infestations_Bites/cutaneous-Larva-Migrans-19.jpeg,Infestations/Bites,train
+exact,d0534742e77e,train/Infestations_Bites/scabies-1.jpeg,Infestations/Bites,train
+exact,d0534742e77e,train/Infestations_Bites/scabies-119.jpeg,Infestations/Bites,train
+exact,db1abfa5654e,test/Infestations_Bites/cutaneous-Larva-Migrans-24.jpeg,Infestations/Bites,test|train
+exact,db1abfa5654e,train/Infestations_Bites/cutaneous-Larva-Migrans-15.jpeg,Infestations/Bites,test|train
+exact,dd7ea93ce032,train/Infestations_Bites/biting-insects-39.jpeg,Infestations/Bites,train
+exact,dd7ea93ce032,train/Infestations_Bites/flea-bites-5.jpeg,Infestations/Bites,train
+exact,dfc01bc5d0ee,test/Sun_Sunlight_Damage/lentigo-adults-30.jpeg,Sun/Sunlight Damage,test|train
+exact,dfc01bc5d0ee,train/Sun_Sunlight_Damage/lentigo-adults-29.jpeg,Sun/Sunlight Damage,test|train
+exact,e099f81b3e0d,train/SkinCancer/basal-cell-carcinoma-pigmented-45.jpeg,Skin Cancer,train
+exact,e099f81b3e0d,train/SkinCancer/basal-cell-carcinoma-pigmented-46.jpeg,Skin Cancer,train
+exact,e2d45af2f805,test/Lichen/Lichen-Planus-Drug-16.jpeg,Drug Eruption|Lichen,test|train
+exact,e2d45af2f805,train/DrugEruption/drug-lichenoid-eruption-13.jpeg,Drug Eruption|Lichen,test|train
+exact,e554465a9a65,train/Infestations_Bites/cutaneous-Larva-Migrans-31.jpeg,Infestations/Bites,train
+exact,e554465a9a65,train/Infestations_Bites/cutaneous-Larva-Migrans-8.jpeg,Infestations/Bites,train
+exact,e9c06807a4f3,train/Infestations_Bites/biting-insects-38.jpeg,Infestations/Bites,train
+exact,e9c06807a4f3,train/Infestations_Bites/flea-bites-4.jpeg,Infestations/Bites,train
+exact,ed84abedf71f,train/SkinCancer/melanoma-mimic-21.jpeg,Skin Cancer,train
+exact,ed84abedf71f,train/SkinCancer/melanoma-mimic-23.jpeg,Skin Cancer,train
+exact,f045e9c0135c,train/DrugEruption/drug-eruptions-56.jpeg,Drug Eruption,train
+exact,f045e9c0135c,train/DrugEruption/drug-eruptions-57.jpeg,Drug Eruption,train
+exact,f1a110860535,train/Infestations_Bites/cutaneous-Larva-Migrans-26.jpeg,Infestations/Bites,train
+exact,f1a110860535,train/Infestations_Bites/cutaneous-Larva-Migrans-4.jpeg,Infestations/Bites,train
+exact,f5ea9322b447,train/Infestations_Bites/biting-insects-36.jpeg,Infestations/Bites,train
+exact,f5ea9322b447,train/Infestations_Bites/flea-bites-2.jpeg,Infestations/Bites,train
+exact,f84a86d0a4ab,train/Sun_Sunlight_Damage/lentigo-adults-77.jpeg,Sun/Sunlight Damage,train
+exact,f84a86d0a4ab,train/Sun_Sunlight_Damage/sun-damaged-skin-58.jpeg,Sun/Sunlight Damage,train
+exact,f9971664c7de,train/Infestations_Bites/cutaneous-Larva-Migrans-18.jpeg,Infestations/Bites,train
+exact,f9971664c7de,train/Infestations_Bites/cutaneous-Larva-Migrans-9.jpeg,Infestations/Bites,train
+exact,fc09d19afc86,test/SkinCancer/basal-cell-carcinoma-pigmented-64.jpeg,Skin Cancer,test|train
+exact,fc09d19afc86,train/SkinCancer/basal-cell-carcinoma-pigmented-65.jpeg,Skin Cancer,test|train
+exact,fd87eac0c15d,train/Acne/acne-face-1-28__WatermarkedWyJXYXRlcm1hcmtlZCJd (1).jpeg,Acne,train
+exact,fd87eac0c15d,train/Acne/acne-face-1-28__WatermarkedWyJXYXRlcm1hcmtlZCJd.jpeg,Acne,train
+near,g1005,train/Acne/acne-cystic-139.jpeg,Acne,train
+near,g1005,train/Acne/acne-cystic-54.jpeg,Acne,train
+near,g1118,train/Acne/acne-face-1-28__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Acne,train
+near,g1118,train/Acne/acne-face-1-28__WatermarkedWyJXYXRlcm1hcmtlZCJd (1).jpeg,Acne,train
+near,g1118,train/Acne/acne-face-1-28__WatermarkedWyJXYXRlcm1hcmtlZCJd.jpeg,Acne,train
+near,g114,test/Actinic_Keratosis/actinic-keratosis-web.jpeg,Actinic Keratosis,test
+near,g114,test/Actinic_Keratosis/images160.jpeg,Actinic Keratosis,test
+near,g1477,train/DrugEruption/1-drug-eruption-1024x1024.jpeg,Drug Eruption,train
+near,g1477,train/DrugEruption/image28.jpeg,Drug Eruption,train
+near,g1478,train/DrugEruption/1-s2.0-S0738081X19301816-gr5.jpeg,Drug Eruption,train
+near,g1478,train/DrugEruption/images26.jpeg,Drug Eruption,train
+near,g1480,train/DrugEruption/10.3928_19382359-20200224-01-fig2.jpeg,Drug Eruption,train
+near,g1480,train/DrugEruption/images377.jpeg,Drug Eruption,train
+near,g1481,train/DrugEruption/105v33n05-13080933fig01.jpeg,Drug Eruption,train
+near,g1481,train/DrugEruption/images202.jpeg,Drug Eruption,train
+near,g1482,train/DrugEruption/2038640-fixed-drug-eruption.jpeg,Drug Eruption,train
+near,g1482,train/DrugEruption/images201.jpeg,Drug Eruption,train
+near,g1483,train/DrugEruption/27456tn.jpeg,Drug Eruption,train
+near,g1483,train/DrugEruption/image32.jpeg,Drug Eruption,train
+near,g1484,train/DrugEruption/27468tn.jpeg,Drug Eruption,train
+near,g1484,train/DrugEruption/images47.jpeg,Drug Eruption,train
+near,g1485,train/DrugEruption/27470tn.jpeg,Drug Eruption,train
+near,g1485,train/DrugEruption/images212.jpeg,Drug Eruption,train
+near,g1486,train/DrugEruption/27478tn.jpeg,Drug Eruption,train
+near,g1486,train/DrugEruption/image13.jpeg,Drug Eruption,train
+near,g1487,train/DrugEruption/3180fig1_opt.jpeg,Drug Eruption,train
+near,g1487,train/DrugEruption/images106.jpeg,Drug Eruption,train
+near,g1488,train/DrugEruption/34441tn.jpeg,Drug Eruption,train
+near,g1488,train/DrugEruption/images332.jpeg,Drug Eruption,train
+near,g1489,train/DrugEruption/3dresssyndrome_1491634-860x591.jpeg,Drug Eruption,train
+near,g1489,train/DrugEruption/images104.jpeg,Drug Eruption,train
+near,g1491,train/DrugEruption/41408_2016_Article_BFbcj201648_Fig1_HTML.jpeg,Drug Eruption,train
+near,g1491,train/DrugEruption/images70.jpeg,Drug Eruption,train
+near,g1492,train/DrugEruption/520597_1_En_14_Fig1_HTML.jpeg,Drug Eruption,train
+near,g1492,train/DrugEruption/images74.jpeg,Drug Eruption,train
+near,g1493,train/DrugEruption/Acute_generalized_exanthematous_pustulosis.jpeg,Drug Eruption,train
+near,g1493,train/DrugEruption/images157.jpeg,Drug Eruption,train
+near,g1495,train/DrugEruption/Drugreaction.jpeg,Drug Eruption,train
+near,g1495,train/DrugEruption/image17.jpeg,Drug Eruption,train
+near,g1496,train/DrugEruption/F3.large.jpeg,Drug Eruption,train
+near,g1496,train/DrugEruption/images72.jpeg,Drug Eruption,train
+near,g1497,train/DrugEruption/F4.large.jpeg,Drug Eruption,train
+near,g1497,train/DrugEruption/images213.jpeg,Drug Eruption,train
+near,g1498,train/DrugEruption/FDE_tramadol_fee391183f15cb4d62773032fe0be92d.jpeg,Drug Eruption,train
+near,g1498,train/DrugEruption/images321.jpeg,Drug Eruption,train
+near,g1500,train/DrugEruption/Lichenoid-tramadol_fee391183f15cb4d62773032fe0be92d.jpeg,Drug Eruption,train
+near,g1500,train/DrugEruption/images257.jpeg,Drug Eruption,train
+near,g1501,train/DrugEruption/Skin-allergy-to-drug.jpeg,Drug Eruption,train
+near,g1501,train/DrugEruption/images221.jpeg,Drug Eruption,train
+near,g1505,train/DrugEruption/c0348793-800px-wm.jpeg,Drug Eruption,train
+near,g1505,train/DrugEruption/images267.jpeg,Drug Eruption,train
+near,g1507,train/DrugEruption/ch4329.fig1_.jpeg,Drug Eruption,train
+near,g1507,train/DrugEruption/images384.jpeg,Drug Eruption,train
+near,g1551,train/DrugEruption/drug-eruptions-29.jpeg,Drug Eruption|Skin Cancer,train
+near,g1551,train/SkinCancer/basal-cell-carcinoma-superficial-50.jpeg,Drug Eruption|Skin Cancer,train
+near,g1582,train/DrugEruption/drug-eruptions-62.jpeg,Drug Eruption,train
+near,g1582,train/DrugEruption/drug-eruptions-63.jpeg,Drug Eruption,train
+near,g1589,train/DrugEruption/drug-eruptions-69.jpeg,Drug Eruption,train
+near,g1589,train/DrugEruption/drug-eruptions-81.jpeg,Drug Eruption,train
+near,g1635,train/DrugEruption/drug1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Drug Eruption,train
+near,g1635,train/DrugEruption/images50.jpeg,Drug Eruption,train
+near,g1637,train/DrugEruption/drugEruption_3017_lg.jpeg,Drug Eruption,train
+near,g1637,train/DrugEruption/image27.jpeg,Drug Eruption,train
+near,g1638,train/DrugEruption/drugEruption_4839_lg.jpeg,Drug Eruption,train
+near,g1638,train/DrugEruption/image24.jpeg,Drug Eruption,train
+near,g1639,train/DrugEruption/drugEruption_84_lg.jpeg,Drug Eruption,train
+near,g1639,train/DrugEruption/images362.jpeg,Drug Eruption,train
+near,g1640,train/DrugEruption/drugEruption_87_lg.jpeg,Drug Eruption,train
+near,g1640,train/DrugEruption/images281.jpeg,Drug Eruption,train
+near,g1641,train/DrugEruption/drug_eruption_1_dilantin_hig.jpeg,Drug Eruption,train
+near,g1641,train/DrugEruption/image20.jpeg,Drug Eruption,train
+near,g1642,train/DrugEruption/drug_eruption_2_ampicillin_h.jpeg,Drug Eruption,train
+near,g1642,train/DrugEruption/images398.jpeg,Drug Eruption,train
+near,g1645,train/DrugEruption/fde1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpeg,Drug Eruption,train
+near,g1645,train/DrugEruption/image14.jpeg,Drug Eruption,train
+near,g1665,train/DrugEruption/fixed-drug-eruption-30.jpeg,Drug Eruption,train
+near,g1665,train/DrugEruption/fixed-drug-eruption-47.jpeg,Drug Eruption,train
+near,g1713,train/DrugEruption/ijdvl_2008_74_1_80_38431_3.jpeg,Drug Eruption,train
+near,g1713,train/DrugEruption/images379.jpeg,Drug Eruption,train
+near,g1716,train/DrugEruption/image15.jpeg,Drug Eruption,train
+near,g1716,train/DrugEruption/skin_lesion_urticaria_high.jpeg,Drug Eruption,train
+near,g1726,train/DrugEruption/image31.jpeg,Drug Eruption,train
+near,g1726,train/DrugEruption/medicina-57-00925-g001a-550.jpeg,Drug Eruption,train
+near,g1769,train/DrugEruption/images149.jpeg,Drug Eruption,train
+near,g1769,train/DrugEruption/mix20b.jpeg,Drug Eruption,train
+near,g1840,train/Acne/acne-cystic-110.jpeg,Acne|Drug Eruption|Infestations/Bites|Skin Cancer,train
+near,g1840,train/DrugEruption/drug-eruptions-3.jpeg,Acne|Drug Eruption|Infestations/Bites|Skin Cancer,train
+near,g1840,train/DrugEruption/images242.jpeg,Acne|Drug Eruption|Infestations/Bites|Skin Cancer,train
+near,g1840,train/Infestations_Bites/spider-bite-32.jpeg,Acne|Drug Eruption|Infestations/Bites|Skin Cancer,train
+near,g1840,train/SkinCancer/ctcl-84.jpeg,Acne|Drug Eruption|Infestations/Bites|Skin Cancer,train
+near,g1847,train/DrugEruption/images250.jpeg,Drug Eruption,train
+near,g1847,train/DrugEruption/images28.jpeg,Drug Eruption,train
+near,g1850,train/DrugEruption/images253.jpeg,Drug Eruption,train
+near,g1850,train/DrugEruption/rash-mikailov-sized.jpeg,Drug Eruption,train
+near,g1854,train/DrugEruption/images260.jpeg,Drug Eruption,train
+near,g1854,train/DrugEruption/targetoid-08__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Drug Eruption,train
+near,g1901,train/DrugEruption/images322.jpeg,Drug Eruption,train
+near,g1901,train/DrugEruption/images367.jpeg,Drug Eruption,train
+near,g1901,train/DrugEruption/skin-rash.jpeg,Drug Eruption,train
+near,g1910,train/DrugEruption/images336.jpeg,Drug Eruption,train
+near,g1910,train/DrugEruption/images6.jpeg,Drug Eruption,train
+near,g1933,train/DrugEruption/images366.jpeg,Drug Eruption,train
+near,g1933,train/DrugEruption/ten1.jpeg,Drug Eruption,train
+near,g1976,train/DrugEruption/images62.jpeg,Drug Eruption,train
+near,g1976,train/DrugEruption/mix19b.jpeg,Drug Eruption,train
+near,g1990,train/DrugEruption/images80.jpeg,Drug Eruption,train
+near,g1990,train/DrugEruption/images89.jpeg,Drug Eruption,train
+near,g2269,train/Infestations_Bites/1371__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDVd.jpeg,Infestations/Bites,train
+near,g2269,train/Infestations_Bites/flea-bites2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDVd.jpeg,Infestations/Bites,train
+near,g2291,train/DrugEruption/drug-eruptions-6.jpeg,Drug Eruption|Infestations/Bites,train
+near,g2291,train/Infestations_Bites/Coral-Poisoning-2.jpeg,Drug Eruption|Infestations/Bites,train
+near,g2291,train/Infestations_Bites/bed-bug-infestation-0003__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDBd.jpeg,Drug Eruption|Infestations/Bites,train
+near,g2291,train/Infestations_Bites/scabies-111.jpeg,Drug Eruption|Infestations/Bites,train
+near,g2613,train/Infestations_Bites/scabies-141.jpeg,Infestations/Bites,train
+near,g2613,train/Infestations_Bites/scabies-142.jpeg,Infestations/Bites,train
+near,g2621,train/Infestations_Bites/scabies-15.jpeg,Infestations/Bites,train
+near,g2621,train/Infestations_Bites/scabies-167.jpeg,Infestations/Bites,train
+near,g2662,train/Infestations_Bites/scabies-193.jpeg,Infestations/Bites|Skin Cancer,train
+near,g2662,train/SkinCancer/basal-cell-carcinoma-superficial-32.jpeg,Infestations/Bites|Skin Cancer,train
+near,g2673,train/Infestations_Bites/scabies-7__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDg1XQ.jpeg,Infestations/Bites,train
+near,g2673,train/Infestations_Bites/scabies7__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDg1XQ.jpeg,Infestations/Bites,train
+near,g2693,train/Infestations_Bites/scabies-9__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Infestations/Bites,train
+near,g2693,train/Infestations_Bites/scabies9__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Infestations/Bites,train
+near,g3161,train/SkinCancer/basal-cell-carcinoma-pigmented-57.jpeg,Skin Cancer,train
+near,g3161,train/SkinCancer/basal-cell-carcinoma-superficial-39.jpeg,Skin Cancer,train
+near,g3207,train/SkinCancer/basal-cell-carcinoma-superficial-16.jpeg,Skin Cancer,train
+near,g3207,train/SkinCancer/basal-cell-carcinoma-superficial-17.jpeg,Skin Cancer,train
+near,g3237,train/SkinCancer/basal-cell-carcinoma-superficial-51.jpeg,Skin Cancer|Sun/Sunlight Damage,train
+near,g3237,train/Sun_Sunlight_Damage/lentigo-adults-79.jpeg,Skin Cancer|Sun/Sunlight Damage,train
+near,g3398,train/SkinCancer/malignant-melanoma-137.jpeg,Skin Cancer,train
+near,g3398,train/SkinCancer/malignant-melanoma-138.jpeg,Skin Cancer,train
+near,g3441,train/SkinCancer/malignant-melanoma-2.jpeg,Skin Cancer,train
+near,g3441,train/SkinCancer/melanoma-mimic-3.jpeg,Skin Cancer,train
+near,g351,test/DrugEruption/1-s2.0-S0738081X19301816-gr11.jpeg,Drug Eruption,test|train
+near,g351,train/DrugEruption/images2.jpeg,Drug Eruption,test|train
+near,g352,test/DrugEruption/10.1177_0960327111412804-fig1.jpeg,Drug Eruption,test|train
+near,g352,train/DrugEruption/images33.jpeg,Drug Eruption,test|train
+near,g353,test/DrugEruption/Drug-Eruptions.jpeg,Drug Eruption,test|train
+near,g353,train/DrugEruption/image23.jpeg,Drug Eruption,test|train
+near,g354,test/DrugEruption/F1.large.jpeg,Drug Eruption,test|train
+near,g354,train/DrugEruption/images144.jpeg,Drug Eruption,test|train
+near,g3600,train/Sun_Sunlight_Damage/phototoxic-reactions-23.jpeg,Sun/Sunlight Damage,train
+near,g3600,train/Sun_Sunlight_Damage/phototoxic-reactions-32.jpeg,Sun/Sunlight Damage,train
+near,g3642,train/Sun_Sunlight_Damage/phototoxic-reactions-69.jpeg,Sun/Sunlight Damage,train
+near,g3642,train/Sun_Sunlight_Damage/phototoxic-reactions-70.jpeg,Sun/Sunlight Damage,train
+near,g3645,train/Sun_Sunlight_Damage/phototoxic-reactions-71.jpeg,Sun/Sunlight Damage,train
+near,g3645,train/Sun_Sunlight_Damage/phototoxic-reactions-77.jpeg,Sun/Sunlight Damage,train
+near,g366,test/DrugEruption/drug-rash3.jpeg,Drug Eruption,test|train
+near,g366,train/DrugEruption/images166.jpeg,Drug Eruption,test|train
+near,g367,test/DrugEruption/drugEruptionPediatric_19743_lg.jpeg,Drug Eruption,test|train
+near,g367,train/DrugEruption/image22.jpeg,Drug Eruption,test|train
+near,g368,test/DrugEruption/drugEruption_442_lg.jpeg,Drug Eruption,test
+near,g368,test/DrugEruption/images343.jpeg,Drug Eruption,test
+near,g369,test/DrugEruption/fde-nsaid__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Drug Eruption,test|train
+near,g369,train/DrugEruption/images340.jpeg,Drug Eruption,test|train
+near,g3709,train/Sun_Sunlight_Damage/sun-damaged-skin-19.jpeg,Sun/Sunlight Damage,train
+near,g3709,train/Sun_Sunlight_Damage/sun-damaged-skin-64.jpeg,Sun/Sunlight Damage,train
+near,g376,test/DrugEruption/image16.jpeg,Drug Eruption,test|train
+near,g376,train/DrugEruption/drugEruptionPediatric_19742_lg.jpeg,Drug Eruption,test|train
+near,g377,test/DrugEruption/image26.jpeg,Drug Eruption,test|train
+near,g377,train/DrugEruption/nejmcp1104080_f1.jpeg,Drug Eruption,test|train
+near,g391,test/DrugEruption/images226.jpeg,Drug Eruption,test|train
+near,g391,train/DrugEruption/ch4324.fig1_.jpeg,Drug Eruption,test|train
+near,g396,test/DrugEruption/images272.jpeg,Drug Eruption,test|train
+near,g396,train/DrugEruption/images353.jpeg,Drug Eruption,test|train
+near,g406,test/DrugEruption/images375.jpeg,Drug Eruption,test|train
+near,g406,train/DrugEruption/1.jpeg,Drug Eruption,test|train
+near,g406,train/DrugEruption/images91.jpeg,Drug Eruption,test|train
+near,g570,test/Infestations_Bites/scabies-8__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Infestations/Bites,test|train
+near,g570,train/Infestations_Bites/scabies8__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,Infestations/Bites,test|train
+near,g6,test/Acne/acne-cystic-1.jpeg,Acne|Infestations/Bites|Sun/Sunlight Damage,test|train
+near,g6,test/Acne/acne-cystic-36.jpeg,Acne|Infestations/Bites|Sun/Sunlight Damage,test|train
+near,g6,test/Sun_Sunlight_Damage/lentigo-adults-73.jpeg,Acne|Infestations/Bites|Sun/Sunlight Damage,test|train
+near,g6,train/Infestations_Bites/biting-insects-7.jpeg,Acne|Infestations/Bites|Sun/Sunlight Damage,test|train
+near,g611,test/Lichen/Lichen-Sclerosus-Skin-118.jpeg,Infestations/Bites|Lichen,test|train
+near,g611,train/Infestations_Bites/cutaneous-Larva-Migrans-49.jpeg,Infestations/Bites|Lichen,test|train

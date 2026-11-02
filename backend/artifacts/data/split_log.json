@@ -1,0 +1,80 @@
+{
+  "start_images": 3795,
+  "after_drop_unlabelled": 3550,
+  "dropped_conflicting_label_images": 25,
+  "dropped_exact_duplicate_copies": 50,
+  "final_images": 3475,
+  "split_counts": {
+    "Acne": {
+      "test": 93,
+      "train": 461,
+      "val": 92
+    },
+    "Actinic Keratosis": {
+      "test": 12,
+      "train": 59,
+      "val": 12
+    },
+    "Benign Tumors": {
+      "test": 17,
+      "train": 86,
+      "val": 18
+    },
+    "Bullous": {
+      "test": 8,
+      "train": 39,
+      "val": 8
+    },
+    "Candidiasis": {
+      "test": 4,
+      "train": 19,
+      "val": 4
+    },
+    "Drug Eruption": {
+      "test": 85,
+      "train": 426,
+      "val": 86
+    },
+    "Eczema": {
+      "test": 16,
+      "train": 79,
+      "val": 16
+    },
+    "Infestations/Bites": {
+      "test": 80,
+      "train": 400,
+      "val": 80
+    },
+    "Lichen": {
+      "test": 9,
+      "train": 42,
+      "val": 8
+    },
+    "Lupus": {
+      "test": 4,
+      "train": 25,
+      "val": 5
+    },
+    "Moles": {
+      "test": 6,
+      "train": 29,
+      "val": 5
+    },
+    "Seborrheic Keratoses": {
+      "test": 7,
+      "train": 37,
+      "val": 7
+    },
+    "Skin Cancer": {
+      "test": 107,
+      "train": 536,
+      "val": 107
+    },
+    "Sun/Sunlight Damage": {
+      "test": 48,
+      "train": 244,
+      "val": 49
+    }
+  },
+  "group_leakage_check": 0
+}
