@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { useTheme } from '../lib/theme';
 
 // Stylised "total-body scan": a human silhouette drawn as stacked horizontal contour
 // lines (cross-section ellipses), slowly rotating, with lesion markers. Purely illustrative.
@@ -39,6 +40,7 @@ function sections(y: number): Ell[] {
 
 export function BodyScan({ className }: { className?: string }) {
   const host = useRef<HTMLDivElement>(null);
+  const dark = useTheme() === 'dark';
   useEffect(() => {
     const el = host.current; if (!el) return;
     let renderer: THREE.WebGLRenderer;
@@ -48,8 +50,9 @@ export function BodyScan({ className }: { className?: string }) {
     el.appendChild(renderer.domElement);
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
-    camera.position.set(-0.32, 0.95, 3.9);
-    camera.lookAt(-0.32, 0.92, 0);
+    // shift the figure left on wide panels (the live-model card sits on the right)
+    const frame = (wide: boolean) => { const x = wide ? 0.62 : 0; camera.position.set(x, 0.95, 3.9); camera.lookAt(x, 0.92, 0); };
+    frame(el.clientWidth >= 600);
 
     const body = new THREE.Group(); scene.add(body);
     const pos: number[] = [];
@@ -64,24 +67,24 @@ export function BodyScan({ className }: { className?: string }) {
     }
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-    body.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0xd6dbe4, transparent: true, opacity: 0.55 })));
+    body.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: dark ? 0x7dd3fc : 0x64748b, transparent: true, opacity: dark ? 0.42 : 0.38 })));
 
     // lesion markers on the surface (illustrative)
     const markers: { m: THREE.Mesh; base: number; hot?: boolean }[] = [];
     const spots: [number, number, number, boolean][] = [[-0.08, 1.3, -0.105, true], [0.1, 1.05, 0.08, false], [-0.27, 1.1, 0.03, false], [0.07, 0.55, 0.05, false], [0.12, 1.33, 0.1, false], [-0.05, 0.95, 0.09, false]];
     for (const [x, y, z, hot] of spots) {
-      const m = new THREE.Mesh(new THREE.SphereGeometry(hot ? 0.022 : 0.012, 16, 16), new THREE.MeshBasicMaterial({ color: hot ? 0xff6b4a : 0xf5f7fa, transparent: true }));
+      const m = new THREE.Mesh(new THREE.SphereGeometry(hot ? 0.022 : 0.012, 16, 16), new THREE.MeshBasicMaterial({ color: hot ? (dark ? 0x38bdf8 : 0x0284c7) : (dark ? 0x2dc770 : 0x166534), transparent: true }));
       m.position.set(x, y, z); body.add(m); markers.push({ m, base: hot ? 0.022 : 0.012, hot });
       if (hot) {
-        const ring = new THREE.Mesh(new THREE.RingGeometry(0.035, 0.042, 40), new THREE.MeshBasicMaterial({ color: 0xff6b4a, transparent: true, opacity: 0.6, side: THREE.DoubleSide }));
+        const ring = new THREE.Mesh(new THREE.RingGeometry(0.035, 0.042, 40), new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.7, side: THREE.DoubleSide }));
         ring.position.copy(m.position); body.add(ring); markers.push({ m: ring, base: 1, hot: true });
       }
     }
     // scan plane
-    const plane = new THREE.Mesh(new THREE.PlaneGeometry(1.1, 0.004), new THREE.MeshBasicMaterial({ color: 0x7fb2ff, transparent: true, opacity: 0.7 }));
+    const plane = new THREE.Mesh(new THREE.PlaneGeometry(1.1, 0.004), new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.85 }));
     scene.add(plane);
 
-    const resize = () => { const w = el.clientWidth, h = el.clientHeight; renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+    const resize = () => { const w = el.clientWidth, h = el.clientHeight; renderer.setSize(w, h); camera.aspect = w / h; frame(w >= 600); camera.updateProjectionMatrix(); };
     resize();
     const ro = new ResizeObserver(resize); ro.observe(el);
     let raf = 0; const t0 = performance.now();
@@ -94,7 +97,13 @@ export function BodyScan({ className }: { className?: string }) {
       if (!reduce) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(raf); ro.disconnect(); renderer.dispose(); el.removeChild(renderer.domElement); };
-  }, []);
+    // pause the render loop while the panel is scrolled out of view
+    const io = new IntersectionObserver(([e]) => {
+      cancelAnimationFrame(raf);
+      if (e.isIntersecting) raf = requestAnimationFrame(tick);
+    });
+    io.observe(el);
+    return () => { cancelAnimationFrame(raf); io.disconnect(); ro.disconnect(); renderer.dispose(); el.removeChild(renderer.domElement); };
+  }, [dark]);
   return <div ref={host} className={className} aria-hidden="true" />;
 }

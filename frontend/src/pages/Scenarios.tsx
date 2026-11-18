@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import { LuPlay } from 'react-icons/lu';
-import { Plot, SERIES } from '../components/Plot';
-import { Alert, Card, ErrorBox, PageHeader, Slider, Spinner, Tabs } from '../components/ui';
+import { LuGitCompareArrows, LuPlay } from 'react-icons/lu';
+import { MUTED, Plot, SERIES } from '../components/Plot';
+import { AiWorking, Alert, Card, CardSkeleton, ErrorBox, PageHeader, Slider, Tabs } from '../components/ui';
 import { api, fmt } from '../lib/api';
 import { useApi, useInterval } from '../lib/hooks';
 
@@ -43,36 +43,37 @@ export default function Scenarios() {
   const mdef = METRICS.find((m) => m[0] === metric)!;
   const chart = useMemo(() => [{
     type: 'bar', orientation: 'h', y: nonSweep.map(label).reverse(), x: nonSweep.map((r) => r[`${metric}_mean`]).reverse(),
-    error_x: { type: 'data', array: nonSweep.map((r) => r[`${metric}_sd`]).reverse(), color: '#98a1b1', thickness: 1 },
-    marker: { color: nonSweep.map((r) => (r.workflow === 'traditional' ? '#c3cbd8' : r.workflow === 'knowledge_augmented' ? SERIES[6] : SERIES[0])).reverse() },
+    error_x: { type: 'data', array: nonSweep.map((r) => r[`${metric}_sd`]).reverse(), color: '#94A3B8', thickness: 1 },
+    marker: { color: nonSweep.map((r) => (r.workflow === 'traditional' ? MUTED : r.workflow === 'knowledge_augmented' ? SERIES[1] : SERIES[0])).reverse() },
     hovertemplate: `%{y}<br>${mdef[1]}: %{x:${mdef[2] === 'pct' ? '.1%' : '.2f'}}<extra></extra>`,
   }], [summary, metric]);
   const acc = sweep.map((r) => Number(r.variant.split('=')[1]));
 
   return (
     <div className="space-y-6">
-      <PageHeader eyebrow="Experiments" title="Six-scenario comparison"
+      <PageHeader eyebrow="Experiments" title="Six-scenario comparison" icon={<LuGitCompareArrows />}
         description="Each scenario is executed as real Mesa runs with independent random seeds (replications); bars show mean ± SD. Common random numbers make arrivals and patient mixes identical across workflows within a replication."
-        actions={<div className="flex items-end gap-3"><div className="w-44"><Slider label="Replications" value={reps} min={1} max={10} onChange={setReps} /></div>
-          <button className="btn-primary" disabled={!!job} onClick={run}><LuPlay /> {job ? 'Running…' : 'Run all six scenarios'}</button></div>} />
+        actions={<div className="flex flex-wrap items-end gap-3"><div className="w-44"><Slider label="Replications" value={reps} min={1} max={10} onChange={setReps} /></div>
+          <button className="btn-primary" disabled={!!job} onClick={run}><LuPlay className="size-4" /> {job ? 'Running…' : 'Run all six scenarios'}</button></div>} />
       <ErrorBox error={err} />
-      {job && <Spinner label="Background job running the Mesa experiments…" />}
-      {!data && !latest.loading && <Alert title="No experiment yet">Press “Run all six scenarios”.</Alert>}
+      {job && <AiWorking label="Background job running the Mesa experiments" steps={['Traditional clinic', 'AI-assisted clinic', 'High patient load', 'Limited dermatologists', 'AI accuracy levels', 'Knowledge-augmented clinic']} />}
+      {latest.loading && !data && <CardSkeleton chart />}
+      {!data && !latest.loading && <Alert title="No experiment yet">Press "Run all six scenarios" to execute the Mesa experiments.</Alert>}
       {data && (
         <>
-          <div className="text-xs text-ink-500">Last run {new Date(data.created * 1000).toLocaleString()} · {data.replications} replications · base: {data.base_params.arrival_rate_per_hour} arrivals/h, {data.base_params.n_dermatologists} dermatologists, {data.base_params.days} days × {data.base_params.operating_minutes / 60} h</div>
-          <div className="grid md:grid-cols-3 xl:grid-cols-6 gap-3">
-            {Object.entries<any>(data.scenarios).map(([k, s]) => <div key={k} className="glass px-4 py-3"><div className="text-sm font-semibold text-ink-900">{s.title}</div><div className="text-xs text-ink-500 mt-1">{s.purpose}</div></div>)}
+          <div className="text-[12.5px] text-ink-500">Last run {new Date(data.created * 1000).toLocaleString()} · {data.replications} replications · base: {data.base_params.arrival_rate_per_hour} arrivals/h, {data.base_params.n_dermatologists} dermatologists, {data.base_params.days} days × {data.base_params.operating_minutes / 60} h</div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-3">
+            {Object.entries<any>(data.scenarios).map(([k, s], i) => <div key={k} className="card px-4 py-3 animate-fade-up" style={{ animationDelay: `${i * 40}ms` }}><div className="text-[13.5px] font-semibold text-ink-900">{s.title}</div><div className="text-[12px] text-ink-500 mt-1 leading-relaxed">{s.purpose}</div></div>)}
           </div>
-          <Card title="Compare a metric across scenarios" subtitle="Grey = traditional workflow, blue = AI-assisted, violet = knowledge-augmented"
-            action={<div className="flex gap-2 items-center"><select className="input !py-1.5 !w-64" value={metric} onChange={(e) => setMetric(e.target.value)} aria-label="Metric">{METRICS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}</select>
+          <Card title="Compare a metric across scenarios" subtitle="Grey = traditional workflow, sky blue = AI-assisted, green = knowledge-augmented"
+            action={<div className="flex flex-wrap gap-2 items-center"><select className="input w-full sm:!w-64" value={metric} onChange={(e) => setMetric(e.target.value)} aria-label="Metric">{METRICS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}</select>
               <Tabs tabs={[{ id: 'chart', label: 'Chart' }, { id: 'table', label: 'Table' }]} value={view} onChange={setView} /></div>}>
             {view === 'chart' ? (
               <Plot ariaLabel={`${mdef[1]} by scenario`} height={360} data={chart}
                 layout={{ margin: { l: 230, r: 30, t: 10, b: 40 }, xaxis: { title: { text: mdef[1] }, tickformat: mdef[2] === 'pct' ? '.0%' : undefined } }} />
             ) : (
-              <div className="overflow-x-auto scrollbar-thin"><table className="table-base"><thead><tr><th>Scenario</th>{METRICS.map(([, l]) => <th key={l}>{l}</th>)}</tr></thead>
-                <tbody>{summary.map((r, i) => <tr key={i}><td className="whitespace-nowrap">{label(r)}</td>{METRICS.map(([k, , f]) => <td key={k}>{f === 'pct' ? fmt.pct(r[`${k}_mean`]) : fmt.num(r[`${k}_mean`], 2)}<span className="text-ink-400 text-xs"> ±{f === 'pct' ? fmt.pct(r[`${k}_sd`]) : fmt.num(r[`${k}_sd`], 2)}</span></td>)}</tr>)}</tbody></table></div>
+              <div className="overflow-x-auto scrollbar-thin rounded-lg border border-ink-200"><table className="table-base"><thead><tr><th>Scenario</th>{METRICS.map(([, l]) => <th key={l}>{l}</th>)}</tr></thead>
+                <tbody>{summary.map((r, i) => <tr key={i}><td className="whitespace-nowrap">{label(r)}</td>{METRICS.map(([k, , f]) => <td key={k}>{f === 'pct' ? fmt.pct(r[`${k}_mean`]) : fmt.num(r[`${k}_mean`], 2)}<span className="text-ink-400 text-[11.5px]"> ±{f === 'pct' ? fmt.pct(r[`${k}_sd`]) : fmt.num(r[`${k}_sd`], 2)}</span></td>)}</tr>)}</tbody></table></div>
             )}
           </Card>
           {sweep.length > 0 && (

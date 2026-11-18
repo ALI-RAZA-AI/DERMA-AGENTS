@@ -39,7 +39,7 @@ export function useHashRoute(): [string, (p: string) => void] {
   const get = () => (window.location.hash.replace(/^#/, '') || '/');
   const [route, setRoute] = useState(get());
   useEffect(() => {
-    const on = () => { setRoute(get()); window.scrollTo({ top: 0 }); };
+    const on = () => setRoute(get()); // the layout resets the scrolling main region
     window.addEventListener('hashchange', on);
     return () => window.removeEventListener('hashchange', on);
   }, []);
