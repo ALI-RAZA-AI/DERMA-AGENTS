@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Layout } from './components/Layout';
-import { Spinner } from './components/ui';
+import { Alert, Spinner } from './components/ui';
 import { useHashRoute } from './lib/hooks';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
@@ -26,7 +26,7 @@ class Boundary extends React.Component<{ children: React.ReactNode }, { err: Err
   state = { err: null as Error | null };
   static getDerivedStateFromError(err: Error) { return { err }; }
   render() {
-    if (this.state.err) return <div className="glass p-6 text-rose-200">Something went wrong rendering this page: {this.state.err.message}</div>;
+    if (this.state.err) return <Alert tone="error" title="This page could not be displayed">{this.state.err.message}. Try reloading the page; if the problem persists, check that the backend is running.</Alert>;
     return this.props.children;
   }
 }

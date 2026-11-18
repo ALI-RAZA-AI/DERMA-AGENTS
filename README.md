@@ -1,6 +1,6 @@
-# DermaAgents — Agent-Based Dermatology Diagnosis & Care Simulation Platform
+# Derm Agents — AI-Powered Dermatology Agent-Based Modeling System
 
-**Designed and Developed by ALI RAZA** · University of Central Punjab · Section AG2 · Agent Based Modelling
+**Developed and designed by Ali Raza** · University of Central Punjab · Section AG2 · Agent Based Modelling
 
 > Academic simulation only. Not a medical device, not medical advice, no real prescriptions.
 > Only synthetic patients are stored. Do not upload real patient photographs.
@@ -25,8 +25,10 @@ backend/
   artifacts/       models, evaluation reports, dataset audit, demo test images, scenario results
   tests/           43 pytest tests (dataset, inference, agents, workflow, Mesa, KG, RAG, API, end-to-end)
 frontend/          React 19 + TypeScript + Tailwind v4 SPA (12 pages), esbuild build, Playwright e2e test
-                   Clinical-light design: airy blue canvas, white glass cards, Instrument Serif display +
-                   Inter UI, dark contour "body-scan" panels (three.js), live data in every widget
+                   Derm Agents design system: white canvas, sky-blue (#38BDF8) + dark-green (#166534) accents,
+                   one font family (Inter), fixed header + independently scrolling sidebar and content,
+                   collapsible sidebar / mobile drawer, skeleton loaders, animated counters, live data everywhere
+                   Light / dark theme toggle (Discord-style graphite dark mode, saved per browser)
 vendor/            offline-sandbox copies of pure-Python libs (ignored when real packages are installed)
 docs/              DEPLOYMENT.md · MODEL_CARD.md · RESULTS.md
 Dockerfile         full single-container image (ensemble model, needs ~1 GB RAM)
@@ -35,7 +37,9 @@ Dockerfile.render  lite image for Render's free plan (MobileNetV2, ~395 MB peak 
 
 ## Run it on your own computer (localhost)
 
-* **Windows:** double-click `start_windows.bat`
+* **Windows:** double-click `run.bat` (recommended: picks Python 3.11–3.13, sets up `.venv` once and opens the browser;
+  `run.bat 8080` uses another port, `run.bat reinstall` rebuilds the environment, `run_tests.bat` runs the tests).
+  `start_windows.bat` still works as a simpler alternative.
 * **macOS / Linux:** run `./start_mac_linux.sh`
 
 Both scripts create a virtual environment, install the requirements (first run only) and open
